@@ -451,7 +451,7 @@
 
             // 4. Lấy giỏ hàng từ localStorage
             let storageKey = 'cart_items';
-            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
+            let cart = JSON.parse(localStorage.getItem(storageKey)) || [];
 
             // 5. Kiểm tra xem sản phẩm đã có trong giỏ chưa
             let found = false;
@@ -469,7 +469,7 @@
             }
 
             // 7. Lưu vào localStorage
-            localStorage.setItem(storageKey, jsON.stringify(cart));
+            localStorage.setItem(storageKey, JSON.stringify(cart));
 
             // 8. Thông báo thành công
             showToastNotification(`✅ Đã thêm "${name}" vào giỏ hàng!`);
@@ -495,7 +495,7 @@
         // ===== HÀM CẬP NHẬT BADGE GIỎ HÀNG =====
         function updateCartBadge() {
             let storageKey = 'cart_items';
-            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
+            let cart = JSON.parse(localStorage.getItem(storageKey)) || [];
             let total = 0;
             
             for (let item of cart) {
@@ -602,9 +602,9 @@ ${payment === 'cod' ? '💵 Thanh toán khi nhận hàng (COD)' : '🏦 Chuyển
                 status: '⏳ Chờ xác nhận'
             };
 
-            let orders = jsON.parse(localStorage.getItem('orders')) || [];
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
             orders.push(order);
-            localStorage.setItem('orders', jsON.stringify(orders));
+            localStorage.setItem('orders', JSON.stringify(orders));
 
             console.log('✅ Đơn hàng đã được lưu:', order);
 
