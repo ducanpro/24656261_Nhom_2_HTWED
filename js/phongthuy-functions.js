@@ -8,7 +8,7 @@
 // =============================================
 const Cart = {
   getAll() { return JSON.parse(localStorage.getItem('pt_cart') || '[]'); },
-  save(items) { localStorage.setItem('pt_cart', jsON.stringify(items)); Cart.updateBadge(); },
+  save(items) { localStorage.setItem('pt_cart', JSON.stringify(items)); Cart.updateBadge(); },
   add(product) {
     const items = Cart.getAll();
     const idx = items.findIndex(i => i.id === product.id);
@@ -63,7 +63,7 @@ const Auth = {
     const users = Auth.getUsers();
     if (users.find(u => u.email === email)) return { ok: false, msg: 'Email này đã được đăng ký!' };
     users.push({ name, email, password, createdAt: Date.now() });
-    localStorage.setItem('pt_users', jsON.stringify(users));
+    localStorage.setItem('pt_users', JSON.stringify(users));
     return { ok: true };
   },
   login(email, password) {
@@ -93,7 +93,7 @@ const Orders = {
     // Apply coupon discount
     if (orderData.couponDiscount) order.total = Math.max(0, order.total - orderData.couponDiscount);
     orders.unshift(order);
-    localStorage.setItem('pt_orders', jsON.stringify(orders));
+    localStorage.setItem('pt_orders', JSON.stringify(orders));
     Cart.clear(); return order;
   },
   updateStatus(id, status) {
@@ -101,7 +101,7 @@ const Orders = {
     const statusTextMap = { pending: 'Chờ xác nhận', confirmed: 'Đã xác nhận', shipping: 'Đang giao', done: 'Hoàn thành', cancelled: 'Đã h���y' };
     const idx = orders.findIndex(o => o.id === id);
     if (idx > -1) { orders[idx].status = status; orders[idx].statusText = statusTextMap[status] || status; }
-    localStorage.setItem('pt_orders', jsON.stringify(orders));
+    localStorage.setItem('pt_orders', JSON.stringify(orders));
   }
 };
 
@@ -159,7 +159,7 @@ const Search = {
 // =============================================
 const Wishlist = {
   getAll() { return JSON.parse(localStorage.getItem('pt_wishlist') || '[]'); },
-  save(items) { localStorage.setItem('pt_wishlist', jsON.stringify(items)); Wishlist.updateBadge(); },
+  save(items) { localStorage.setItem('pt_wishlist', JSON.stringify(items)); Wishlist.updateBadge(); },
   toggle(product) {
     const items = Wishlist.getAll();
     const idx = items.findIndex(i => i.id === product.id);
@@ -200,7 +200,7 @@ const Reviews = {
     const all = Reviews.getAll();
     if (!all[productId]) all[productId] = [];
     all[productId].unshift({ review, id: Date.now(), createdAt: Date.now() });
-    localStorage.setItem('pt_reviews', jsON.stringify(all));
+    localStorage.setItem('pt_reviews', JSON.stringify(all));
   },
   avgRating(productId) {
     const rv = Reviews.getByProduct(productId);

@@ -393,7 +393,7 @@
         // ===== AUTH SYSTEM =====
         const Auth = {
             getCurrentUser() { 
-                return jsON.parse(localStorage.getItem('pt_current_user') || 'null'); 
+                return JSON.parse(localStorage.getItem('pt_current_user') || 'null'); 
             },
             logout() {
                 localStorage.removeItem('pt_current_user');
@@ -491,7 +491,7 @@
 
         // Update cart badge
         function updateCartBadge() {
-            let cart = jsON.parse(localStorage.getItem('cart_items') || '[]');
+            let cart = JSON.parse(localStorage.getItem('cart_items') || '[]');
             let total = cart.reduce((s, i) => s + i.qty, 0);
             document.querySelector('.cart-badge').innerText = total;
         }

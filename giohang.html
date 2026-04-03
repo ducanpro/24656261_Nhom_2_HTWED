@@ -260,7 +260,7 @@
         // ===== HÀM RENDER GIỎ HÀNG TỪ LOCALSTORAGE =====
         function renderCart() {
             const storageKey = 'cart_items';
-            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
+            const items = JSON.parse(localStorage.getItem(storageKey)) || [];
             
             const emptyEl = document.getElementById('empty-cart');
             const contentEl = document.getElementById('cart-content');
@@ -292,7 +292,7 @@
         // ===== CẬP NHẬT TỔNG TIỀN =====
         function updateTotals() {
             const storageKey = 'cart_items';
-            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
+            const items = JSON.parse(localStorage.getItem(storageKey)) || [];
             
             let sub = 0;
             items.forEach(item => {
@@ -359,7 +359,7 @@
             
             appliedCoupon = code;
             const storageKey = 'cart_items';
-            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
+            const items = JSON.parse(localStorage.getItem(storageKey)) || [];
             let sub = 0;
             items.forEach(item => sub += item.price * item.qty);
             
@@ -372,28 +372,28 @@
         // ===== XÓA SẢN PHẨM =====
         function removeItem(id) {
             const storageKey = 'cart_items';
-            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
+            let cart = JSON.parse(localStorage.getItem(storageKey)) || [];
             cart = cart.filter(item => item.id !== id);
-            localStorage.setItem(storageKey, jsON.stringify(cart));
+            localStorage.setItem(storageKey, JSON.stringify(cart));
             renderCart();
         }
 
         // ===== CẬP NHẬT SỐ LƯỢNG =====
         function updateQty(id, qty) {
             const storageKey = 'cart_items';
-            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
+            let cart = JSON.parse(localStorage.getItem(storageKey)) || [];
             let item = cart.find(i => i.id === id);
             if (item && qty > 0) {
                 item.qty = qty;
             }
-            localStorage.setItem(storageKey, jsON.stringify(cart));
+            localStorage.setItem(storageKey, JSON.stringify(cart));
             renderCart();
         }
 
         // ===== XÓA TẤT CẢ =====
         function clearCart() {
             if (confirm('Xóa toàn bộ giỏ hàng?')) {
-                localStorage.setItem('cart_items', jsON.stringify([]));
+                localStorage.setItem('cart_items', JSON.stringify([]));
                 appliedCoupon = null;
                 discountAmount = 0;
                 renderCart();
@@ -403,7 +403,7 @@
         // ===== CẬP NHẬT BADGE GIỎ HÀNG =====
         function updateCartBadge() {
             const storageKey = 'cart_items';
-            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
+            const items = JSON.parse(localStorage.getItem(storageKey)) || [];
             let total = 0;
             items.forEach(item => total += item.qty);
             document.querySelector('.cart-badge').innerText = total;
@@ -416,7 +416,7 @@
             section.scrollIntoView({ behavior: 'smooth' });
             
             const storageKey = 'cart_items';
-            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
+            const items = JSON.parse(localStorage.getItem(storageKey)) || [];
             let sub = 0;
             items.forEach(item => sub += item.price * item.qty);
             
@@ -452,7 +452,7 @@
             }
 
             const storageKey = 'cart_items';
-            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
+            const items = JSON.parse(localStorage.getItem(storageKey)) || [];
             let total = 0;
             items.forEach(item => total += item.price * item.qty);
             total = Math.max(0, total - discountAmount);
@@ -461,7 +461,7 @@
             const orderId = 'ORD-' + Date.now();
             
             // Lưu đơn hàng vào localStorage
-            let orders = jsON.parse(localStorage.getItem('orders')) || [];
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
             orders.push({
                 id: orderId,
                 name: name,
@@ -476,10 +476,10 @@
                 total: total,
                 date: new Date().toLocaleString('vi-VN')
             });
-            localStorage.setItem('orders', jsON.stringify(orders));
+            localStorage.setItem('orders', JSON.stringify(orders));
             
             // Xóa giỏ hàng
-            localStorage.setItem('cart_items', jsON.stringify([]));
+            localStorage.setItem('cart_items', JSON.stringify([]));
             
             document.getElementById('cart-content').style.display = 'none';
             document.getElementById('empty-cart').style.display = 'none';

@@ -549,7 +549,7 @@
       return value;
     }
     try {
-      return jsON.parse(decodeURIComponent(value));
+      return JSON.parse(decodeURIComponent(value));
     } catch (_unused) {
       return value;
     }
@@ -615,11 +615,11 @@
       return config;
     }
     _mergeConfigObj(config, element) {
-      const jsonConfig = isElement$1(element) ? Manipulator.getDataAttribute(element, 'config') : {}; // try to parse
+      const JSONConfig = isElement$1(element) ? Manipulator.getDataAttribute(element, 'config') : {}; // try to parse
 
       return {
         .this.constructor.Default,
-        .(typeof jsonConfig === 'object' ? jsonConfig : {}),
+        .(typeof JSONConfig === 'object' ? JSONConfig : {}),
         .(isElement$1(element) ? Manipulator.getDataAttributes(element) : {}),
         .(typeof config === 'object' ? config : {})
       };
