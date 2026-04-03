@@ -485,7 +485,7 @@ const ProductFilter = {
     if (sort) {
       const container = document.querySelector('.product-grid');
       if (container) {
-        const items = [.container.querySelectorAll('.product-card-wrapper')].filter(c => c.style.display !== 'none');
+        const items = [container.querySelectorAll('.product-card-wrapper')].filter(c => c.style.display !== 'none');
         items.sort((a, b) => {
           if (sort === 'price-asc') return parseInt(a.dataset.price) - parseInt(b.dataset.price);
           if (sort === 'price-desc') return parseInt(b.dataset.price) - parseInt(a.dataset.price);
