@@ -7,7 +7,7 @@
 // 1. GIỎ HÀNG
 // =============================================
 const Cart = {
-  getAll() { return jsON.parse(localStorage.getItem('pt_cart') || '[]'); },
+  getAll() { return JSON.parse(localStorage.getItem('pt_cart') || '[]'); },
   save(items) { localStorage.setItem('pt_cart', jsON.stringify(items)); Cart.updateBadge(); },
   add(product) {
     const items = Cart.getAll();
@@ -57,8 +57,8 @@ const Cart = {
 // 2. TÀI KHOẢN
 // =============================================
 const Auth = {
-  getUsers() { return jsON.parse(localStorage.getItem('pt_users') || '[]'); },
-  getCurrentUser() { return jsON.parse(localStorage.getItem('pt_current_user') || 'null'); },
+  getUsers() { return JSON.parse(localStorage.getItem('pt_users') || '[]'); },
+  getCurrentUser() { return JSON.parse(localStorage.getItem('pt_current_user') || 'null'); },
   register(name, email, password) {
     const users = Auth.getUsers();
     if (users.find(u => u.email === email)) return { ok: false, msg: 'Email này đã được đăng ký!' };
@@ -86,7 +86,7 @@ const Auth = {
 // 3. ĐƠN HÀNG
 // =============================================
 const Orders = {
-  getAll() { return jsON.parse(localStorage.getItem('pt_orders') || '[]'); },
+  getAll() { return JSON.parse(localStorage.getItem('pt_orders') || '[]'); },
   place(orderData) {
     const orders = Orders.getAll();
     const order = { id: 'DH' + Date.now(), orderData, status: 'pending', statusText: 'Chờ xác nhận', createdAt: Date.now(), items: Cart.getAll(), total: Cart.total() };
@@ -158,7 +158,7 @@ const Search = {
 // 5. WISHLIST (YÊU THÍCH)
 // =============================================
 const Wishlist = {
-  getAll() { return jsON.parse(localStorage.getItem('pt_wishlist') || '[]'); },
+  getAll() { return JSON.parse(localStorage.getItem('pt_wishlist') || '[]'); },
   save(items) { localStorage.setItem('pt_wishlist', jsON.stringify(items)); Wishlist.updateBadge(); },
   toggle(product) {
     const items = Wishlist.getAll();
@@ -194,7 +194,7 @@ const Wishlist = {
 // 6. ĐÁNH GIÁ SẢN PHẨM
 // =============================================
 const Reviews = {
-  getAll() { return jsON.parse(localStorage.getItem('pt_reviews') || '{}'); },
+  getAll() { return JSON.parse(localStorage.getItem('pt_reviews') || '{}'); },
   getByProduct(productId) { return (Reviews.getAll()[productId] || []); },
   add(productId, review) {
     const all = Reviews.getAll();
