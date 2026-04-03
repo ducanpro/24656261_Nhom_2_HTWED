@@ -69,7 +69,7 @@ const Auth = {
   login(email, password) {
     const user = Auth.getUsers().find(u => u.email === email && u.password === password);
     if (!user) return { ok: false, msg: 'Email hoặc mật khẩu không đúng!' };
-    localStorage.setItem('pt_current_user', jsON.stringify(user));
+    localStorage.setItem('pt_current_user', JSON.stringify(user));
     Auth.updateNavUI(); return { ok: true, user };
   },
   logout() { localStorage.removeItem('pt_current_user'); Auth.updateNavUI(); window.location.href = 'index.html'; },
