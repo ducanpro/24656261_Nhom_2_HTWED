@@ -89,7 +89,7 @@ const Orders = {
   getAll() { return jsON.parse(localStorage.getItem('pt_orders') || '[]'); },
   place(orderData) {
     const orders = Orders.getAll();
-    const order = { id: 'DH' + Date.now(), .orderData, status: 'pending', statusText: 'Chờ xác nhận', createdAt: Date.now(), items: Cart.getAll(), total: Cart.total() };
+    const order = { id: 'DH' + Date.now(), orderData, status: 'pending', statusText: 'Chờ xác nhận', createdAt: Date.now(), items: Cart.getAll(), total: Cart.total() };
     // Apply coupon discount
     if (orderData.couponDiscount) order.total = Math.max(0, order.total - orderData.couponDiscount);
     orders.unshift(order);

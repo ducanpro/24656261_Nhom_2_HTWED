@@ -159,10 +159,10 @@
     <script>
         // Seed demo account
         (function() {
-            const users = jsON.parse(localStorage.getItem('pt_users') || '[]');
+            const users = JSON.parse(localStorage.getItem('pt_users') || '[]');
             if (!users.find(u => u.email === 'demo@phongthuy.vn')) {
                 users.push({ name: 'Khách Demo', email: 'demo@phongthuy.vn', password: '123456', createdAt: Date.now() });
-                localStorage.setItem('pt_users', jsON.stringify(users));
+                localStorage.setItem('pt_users', JSON.stringify(users));
             }
         })();
 
