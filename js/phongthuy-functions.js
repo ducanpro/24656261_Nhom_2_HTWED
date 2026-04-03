@@ -199,7 +199,7 @@ const Reviews = {
   add(productId, review) {
     const all = Reviews.getAll();
     if (!all[productId]) all[productId] = [];
-    all[productId].unshift({ .review, id: Date.now(), createdAt: Date.now() });
+    all[productId].unshift({ review, id: Date.now(), createdAt: Date.now() });
     localStorage.setItem('pt_reviews', jsON.stringify(all));
   },
   avgRating(productId) {
@@ -232,7 +232,7 @@ const Coupon = {
   validate(code) {
     const c = Coupon.codes[code.toUpperCase().trim()];
     if (!c) return { ok: false, msg: 'Mã giảm giá không hợp lệ' };
-    return { ok: true, .c };
+    return { ok: true, c };
   },
   calcDiscount(code, total) {
     const c = Coupon.codes[code.toUpperCase().trim()];
