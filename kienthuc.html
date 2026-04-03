@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Kiến Thức Phong Thủy - Cửa Hàng Phong Thủy</title>
+    <style>
+        :root { --primary-color: #8b0000; --accent-color: #d4af37; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; }
+        
+        /* TOPBAR */
+        .topbar { background-color: var(--primary-color); color: white; font-size: 0.85rem; padding: 12px 0; }
+        .topbar a { color: white; text-decoration: none; transition: 0.3s; }
+        .topbar a:hover { color: var(--accent-color); }
+        
+        /* NAVBAR */
+        .navbar { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1.5rem; }
+        .nav-link { font-weight: 500; color: #333 !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--primary-color) !important; }
+        
+        /* HEADER BANNER */
+        .banner-section {
+            background: linear-gradient(135deg, #8b0000 0%, #d4af37 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .banner-section h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 15px; }
+        .banner-section p { font-size: 1.1rem; opacity: 0.9; }
+        
+        /* BREADCRUMB */
+        .breadcrumb { background-color: transparent; padding-left: 0; }
+        .breadcrumb a { color: var(--primary-color); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        
+        /* SECTION TITLE */
+        .section-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.8rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        
+        /* NAV TABS */
+        .nav-tabs {
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 30px;
+        }
+        .nav-tabs .nav-link {
+            color: #666;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .nav-tabs .nav-link:hover {
+            color: var(--primary-color);
+        }
+        .nav-tabs .nav-link.active {
+            color: white;
+            background-color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        /* CONTENT CARD */
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+        .content-card h3 {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+        .content-card p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        /* LIST STYLE */
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .custom-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #333;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .custom-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* SCHOOL CARD */
+        .school-card {
+            background: linear-gradient(135deg, #fdf5f5 0%, #fff9f0 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .school-card:hover {
+            box-shadow: 0 4px 15px rgba(139,0,0,0.15);
+            transform: translateX(5px);
+        }
+        .school-card h4 {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .school-card p {
+            color: #666;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        
+        /* APPLICATION SECTION */
+        .app-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-top: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .app-box h4 {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .app-box .icon {
+            font-size: 1.5rem;
+        }
+        .app-box p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        /* HIGHLIGHT */
+        .highlight-box {
+            background-color: #fdf5f5;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .highlight-box p {
+            color: #333;
+            margin: 0;
+            line-height: 1.8;
+        }
+        
+        /* FOOTER */
+        footer { background-color: #222; color: #ccc; }
+        footer h5 { color: var(--accent-color); font-weight: bold; }
+        .footer-bottom { background-color: #111; padding: 15px 0; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .banner-section h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.3rem; }
+            .content-card { padding: 20px; }
+            .content-card h3 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div><i class="fas fa-phone-alt"></i> Hotline: 0123 456 789</div>
+            <div>
+                <a href="dangnhap.html" class="auth-login-link">Đăng nhập</a>
+                <a href="dangnhap.html?tab=register" class="auth-register-link">Đăng ký</a>
+                <span class="auth-user-menu" style="display:none;">
+                    <i class="fas fa-user me-1"></i>
+                    <span class="auth-user-name fw-bold"></span>
+                    <a href="donhang.html" class="ms-3">Đơn hàng</a>
+                    <a href="#" onclick="Auth.logout()" class="ms-3">Đăng xuất</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🏮 PHONG THỦY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kienthuc.html">Kiến thức</a></li>
+                    <li class="nav-item"><a class="nav-link" href="yeuthich.html">❤️ Yêu thích</a></li>
+                    <li class="nav-item"><a class="nav-link" href="giohang.html">🛒 Giỏ hàng</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER -->
+    <div class="banner-section">
+        <h1>📚 Kiến Thức Phong Thủy</h1>
+        <p>Khám phá những bí mật về phong thủy, tài lộc và cuộc sống tốt đẹp</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow-1">
+        <div class="container my-5">
+            <!-- BREADCRUMB -->
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Kiến thức</li>
+                </ol>
+            </nav>
+
+            <!-- TAB NAVIGATION -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="origin-tab" data-bs-toggle="tab" data-bs-target="#origin" type="button" role="tab">
+                        <i class="fas fa-book me-2"></i>Nguồn Gốc
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="school-tab" data-bs-toggle="tab" data-bs-target="#school" type="button" role="tab">
+                        <i class="fas fa-graduation-cap me-2"></i>Trường Phái
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="application-tab" data-bs-toggle="tab" data-bs-target="#application" type="button" role="tab">
+                        <i class="fas fa-lightbulb me-2"></i>Áp Dụng Trong Cuộc Sống
+                    </button>
+                </li>
+            </ul>
+
+            <!-- TAB CONTENT -->
+            <div class="tab-content">
+                
+                <!-- TAB 1: NGUỒN GỐC -->
+                <div class="tab-pane fade show active" id="origin" role="tabpanel">
+                    
+                    <div class="content-card">
+                        <h3>📖 Lịch Sử Phát Triển Phong Thủy</h3>
+                        <p>
+                            Phong thủy là một môn học cổ xưa của người Hoa, có nguồn gốc từ thời kỳ Trung Quốc cổ đại, 
+                            khoảng từ thời nhân vật lịch sử <strong>Phục Hy (2953-2838 TCN)</strong> hoặc thậm chí còn lâu hơn. 
+                            Phong thủy bắt nguồn từ sự quan sát thiên nhiên của con người và cách con người tương tác với môi trường xung quanh.
+                        </p>
+                        <p>
+                            Từ "Phong Thủy" được dịch từ tiếng Trung Quốc "風水" (Fēng Shuǐ), nghĩa đen là "gió và nước". 
+                            Hai yếu tố này được coi là những lực tự nhiên quan trọng nhất ảnh hưởng đến năng lượng (khí) của một địa điểm.
+                        </p>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>🌍 Nguyên Lý Cơ Bản</h3>
+                        <p>Phong thủy dựa trên các nguyên lý cốt lõi sau:</p>
+                        <ul class="custom-list">
+                            <li><strong>Âm - Dương (陰陽):</strong> Hai lực đối lập nhưng bổ sung cho nhau, đại diện cho sự cân bằng trong tự nhiên</li>
+                            <li><strong>Ngũ Hành (五行):</strong> Kim, Mộc, Thủy, Hỏa, Thổ - năm yếu tố cơ bản tạo nên vũ trụ</li>
+                            <li><strong>Khí (氣):</strong> Năng lượng sống chảy qua mọi thứ, phong thủy giúp hướng khí để mang lại tốt lành</li>
+                            <li><strong>Ba Giai Đoạn (天地人):</strong> Thiên (trời), Địa (đất), Nhân (con người) cùng tương tác với nhau</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>⏰ Những Mốc Quan Trọng Trong Lịch Sử</h3>
+                        <ul class="custom-list">
+                            <li><strong>Thời Nhân Vật Cổ Đại (2000-3000 TCN):</strong> Những quan sát ban đầu về mối liên hệ giữa con người và tự nhiên</li>
+                            <li><strong>Thời Triều Đại Hàn (202 TCN - 220 SCN):</strong> Phong thủy phát triển thành một hệ thống học thuyết</li>
+                            <li><strong>Thời Triều Đại Đường (618-907 SCN):</strong> Phong thủy đạt đỉnh cao phát triển, được ứng dụng rộng rãi</li>
+                            <li><strong>Thời Triều Đại Tống (960-1279 SCN):</strong> Phong thủy được kết hợp với triết học, toán học và thiên văn</li>
+                            <li><strong>Thời Triều Đại Minh, Thanh (1368-1912 SCN):</strong> Phong thủy trở thành nghệ thuật tinh tế, được tôn trọng cao</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <p>
+                            <strong>💡 Lưu ý:</strong> Phong thủy không phải là mê tín hay phù thủy, mà là một học thuyết dựa trên 
+                            quan sát tự nhiên, chiết học Đông phương, và sự cân bằng giữa con người và môi trường. 
+                            Nó được sử dụng trong kiến trúc, bất động sản, và cuộc sống hàng ngày của hàng tỷ người trên thế giới.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- TAB 2: TRƯỜNG PHÁI -->
+                <div class="tab-pane fade" id="school" role="tabpanel">
+                    
+                    <div class="content-card">
+                        <h3>🏛️ Các Trường Phái Phong Thủy Chính</h3>
+                        <p>
+                            Qua nhiều thế kỷ, phong thủy đã phát triển thành nhiều trường phái khác nhau. 
+                            Mỗi trường phái có cách tiếp cận riêng nhưng đều hướng tới mục tiêu chung: tạo điều kiện cho khí tốt lưu thông.
+                        </p>
+                    </div>
+
+                    <div class="school-card">
+                        <h4>🏔️ 1. Trường Phái Lý Pháp (Form School)</h4>
+                        <p>
+                            <strong>Khác biệt:</strong> Tập trung vào các dạng thế địa học như núi, sông, thung lũng, 
+                            và vị trí tương đối của các vật thể trong không gian.
+                        </p>
+                        <p>
+                            <strong>Nguyên lý:</strong> "Tìm núi ngã, tìm sông bằng, tìm đất bằng phẳng" - quan sát địa hình vật lý.
+                        </p>
+                        <p>
+                            <strong>Ứng dụng:</strong> Chọn vị trí nhà ở, xác định hướng cửa, sắp xếp bàn làm việc dựa vào hình dáng không gian.
+                        </p>
+                    </div>
+
+                    <div class="school-card">
+                        <h4>📊 2. Trường Phái Luận Mệnh (Compass School)</h4>
+                        <p>
+                            <strong>Khác biệt:</strong> Sử dụng la bàn (Compass) Phong Thủy với các vòng tròn thông tin 
+                            để tính toán vị trí, hướng, và năm sinh.
+                        </p>
+                        <p>
+                            <strong>Nguyên lý:</strong> Dùng công thức toán học, thiên văn học để xác định vị trí tốt nhất.
+                        </p>
+                        <p>
+                            <strong>Ứng dụng:</strong> Tính mệnh của người (Kim, Mộc, Thủy, Hỏa, Thổ), xác định hướng tốt nhất cho mỗi mệnh.
+                        </p>
+                    </div>
+
+                    <div class="school-card">
+                        <h4>⭐ 3. Trường Phái Ngũ Quỷ (Flying Stars)</h4>
+                        <p>
+                            <strong>Khác biệt:</strong> Tập trung vào sự thay đổi năng lượng theo thời gian, 
+                            sử dụng hình vuông 9 ô (Lo Shu Square).
+                        </p>
+                        <p>
+                            <strong>Nguyên lý:</strong> Năng lượng thay đổi theo từng giai đoạn thời gian, từng tháng, năm.
+                        </p>
+                        <p>
+                            <strong>Ứng dụng:</strong> Dự đoán những khu vực may mắn hay xui xẻo trong năm, 
+                            thay đổi sắp xếp nội thất theo mùa.
+                        </p>
+                    </div>
+
+                    <div class="school-card">
+                        <h4>🎯 4. Trường Phái Ba Hợp (Ba Qua - 八卦)</h4>
+                        <p>
+                            <strong>Khác biệt:</strong> Sử dụng hình bát quái (8 biểu tượng) để xác định các hướng và năng lượng.
+                        </p>
+                        <p>
+                            <strong>Nguyên lý:</strong> Mỗi hướng (Bắc, Nam, Đông, Tây, v.v.) đại diện cho một khía cạnh cuộc sống.
+                        </p>
+                        <p>
+                            <strong>Ứng dụng:</strong> Sắp xếp nội thất để kích hoạt những khu vực liên quan đến tài lộc, tình yêu, sức khỏe.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <p>
+                            <strong>💡 Lưu ý:</strong> Các trường phái không mâu thuẫn mà bổ sung cho nhau. 
+                            Một chuyên gia phong thủy giỏi thường kết hợp nhiều trường phái để đưa ra giải pháp tốt nhất.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- TAB 3: ÁP DỤNG TRONG CUỘC SỐNG -->
+                <div class="tab-pane fade" id="application" role="tabpanel">
+                    
+                    <div class="content-card">
+                        <h3>🏠 Áp Dụng Phong Thủy Trong Cuộc Sống Hàng Ngày</h3>
+                        <p>
+                            Phong thủy không chỉ là lý thuyết trừu tượng mà còn có những ứng dụng thực tiễn 
+                            giúp cải thiện chất lượng cuộc sống. Dưới đây là những cách áp dụng phổ biến nhất:
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">🏡</span> Phong Thủy Nhà Ở</h4>
+                        <p>
+                            <strong>Chọn vị trí:</strong> Nên chọn nhà ở ở vị trí có ánh sáng tự nhiên tốt, 
+                            thông thoáng khí, không bị sổ nước hay đường lớn chạy trực tiếp.
+                        </p>
+                        <p>
+                            <strong>Cửa vào:</strong> Cửa chính nên rộng và sạch sẽ, đây là nơi khí lộc vào. 
+                            Tránh đặt gương đối diện cửa chính.
+                        </p>
+                        <p>
+                            <strong>Phòng ngủ:</strong> Đầu giường không nên hướng về cửa, hướng bắc hoặc tây 
+                            thường được coi là tốt. Tránh để gương đối diện giường.
+                        </p>
+                        <p>
+                            <strong>Phòng khách:</strong> Sắp xếp sofa sao cho chủ nhân ngồi có thể nhìn thấy cửa ra vào, 
+                            tạo cảm giác an toàn và kiểm soát.
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">💼</span> Phong Thủy Bàn Làm Việc</h4>
+                        <p>
+                            <strong>Vị trí bàn:</strong> Nên đặt bàn sao cho lưng không hướng về cửa hoặc cửa sổ, 
+                            tạo cảm giác ổn định và tập trung.
+                        </p>
+                        <p>
+                            <strong>Ánh sáng:</strong> Ánh sáng tự nhiên ở bên trái bàn làm việc giúp tăng tập trung 
+                            và sáng tạo (đặc biệt là cho người thuận tay phải).
+                        </p>
+                        <p>
+                            <strong>Trang trí:</strong> Đặt các chậu cây xanh để tăng năng lượng, 
+                            một bức ảnh hoặc vật dụng yêu thích để tâm lý tích cực.
+                        </p>
+                        <p>
+                            <strong>Tránh:</strong> Không nên để mảnh nhọn hoặc mặt cắt sắc trực tiếp hướng vào mình.
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">❤️</span> Phong Thủy Tình Yêu Và Hôn Nhân</h4>
+                        <p>
+                            <strong>Phòng ngủ:</strong> Phòng ngủ là nơi trọng yếu. Nên có hai đèn ngủ (một bên trái, một bên phải) 
+                            để tượng trưng cho sự hòa hợp.
+                        </p>
+                        <p>
+                            <strong>Màu sắc:</strong> Sử dụng các màu ấm như đỏ, hồng, hoặc cam nhạt trong phòng ngủ 
+                            để tăng cảm giác ấm áp và lãng mạn.
+                        </p>
+                        <p>
+                            <strong>Trang trí:</strong> Tránh để ảnh gia đình, ảnh quá khứ trong phòng ngủ. 
+                            Nên có những vật dụng thích hợp cho hai người.
+                        </p>
+                        <p>
+                            <strong>Hướng giường:</strong> Hướng đầu giường về hướng may mắn theo mệnh của cặp vợ chồng.
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">💰</span> Phong Thủy Tài Lộc</h4>
+                        <p>
+                            <strong>Góc tài lộc:</strong> Trong bát quái, góc tây nam thường được coi là góc tài lộc. 
+                            Hãy sắp xếp gọn gàng, sạch sẽ và đặt những vật mang ý nghĩa giàu có tại đây.
+                        </p>
+                        <p>
+                            <strong>Cây xanh:</strong> Cây cầu vồng, vạn tuế hoặc cây phát tài giúp hút năng lượng tài lộc. 
+                            Chăm sóc tốt để năng lượng mạnh.
+                        </p>
+                        <p>
+                            <strong>Nước:</strong> Nước chảy (hay hình ảnh nước chảy) tượng trưng cho tiền bạc chảy vào. 
+                            Nhưng không nên để nước chảy ra khỏi nhà.
+                        </p>
+                        <p>
+                            <strong>Vàng và đỏ:</strong> Sử dụng màu vàng, đỏ, hoặc các vật phẩm bằng vàng để tăng cường 
+                            năng lượng tài lộc.
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">🌿</span> Phong Thủy Sức Khỏe</h4>
+                        <p>
+                            <strong>Thông thoáng:</strong> Nhà cửa cần thông thoáng khí, có cửa sổ để ánh sáng tự nhiên vào. 
+                            Không khí tươi là yếu tố quan trọng cho sức khỏe.
+                        </p>
+                        <p>
+                            <strong>Cây xanh:</strong> Cây giúp lọc khí, tạo năng lượng sống. Đặt cây ở những nơi cần 
+                            năng lượng (phòng ngủ, phòng khách).
+                        </p>
+                        <p>
+                            <strong>Màu sắc:</strong> Màu xanh, xanh lá cây tượng trưng cho sức khỏe. 
+                            Tránh quá nhiều màu đen hoặc xám.
+                        </p>
+                        <p>
+                            <strong>Sạch sẽ:</strong> Vệ sinh nhà cửa là yếu tố cơ bản nhất của phong thủy. 
+                            Bụi bẩn cản khí lộc.
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">👶</span> Phong Thủy Con Cái</h4>
+                        <p>
+                            <strong>Phòng trẻ em:</strong> Nên có cửa sổ để ánh sáng tự nhiên, phòng sạch sẽ, 
+                            không quá ồn ào.
+                        </p>
+                        <p>
+                            <strong>Màu sắc:</strong> Sử dụng các màu nhẹ nhàng, vui vẻ như vàng nhạt, xanh lá mạ nhạt. 
+                            Tránh màu quá sẫm.
+                        </p>
+                        <p>
+                            <strong>Giường ngủ:</strong> Giường nên cách xa cửa và cửa sổ, hướng đầu về phía may mắn.
+                        </p>
+                        <p>
+                            <strong>Kích thích trí tuệ:</strong> Đặt những cuốn sách, bảng chữ cái, 
+                            hoặc những vật học tập ở góc học tập.
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">🚗</span> Phong Thủy Ô Tô</h4>
+                        <p>
+                            <strong>Màu xe:</strong> Chọn màu ô tô phù hợp với mệnh của bạn 
+                            (đỏ cho mệnh hỏa, xanh cho mệnh mộc, v.v.).
+                        </p>
+                        <p>
+                            <strong>Trang trí:</strong> Đặt những vật phong thủy nhỏ gọn như tượng Phật Di Lặc, 
+                            vòng cầu lục bình để bảo vệ hành trình.
+                        </p>
+                        <p>
+                            <strong>Sạch sẽ:</strong> Giữ ô tô sạch sẽ, không để rác hoặc vật bẩn bên trong.
+                        </p>
+                        <p>
+                            <strong>Tránh:</strong> Không nên treo quá nhiều vật dụng, có thể gây cản trở tầm nhìn 
+                            hoặc phân tán sự chú ý.
+                        </p>
+                    </div>
+
+                    <div class="app-box">
+                        <h4><span class="icon">💍</span> Phong Thủy Đồ Trang Sức</h4>
+                        <p>
+                            <strong>Vòng tay:</strong> Chọn vòng tay với đá phù hợp mệnh (thạch anh, vàng, ngọc). 
+                            Mỗi đá có công dụng riêng.
+                        </p>
+                        <p>
+                            <strong>Mặt dây:</strong> Những mặt dây như mặt hồ ly, tỳ hưu, hay tượng Phật giúp bảo vệ 
+                            và mang lại may mắn.
+                        </p>
+                        <p>
+                            <strong>Số lượng:</strong> Không nên đeo quá nhiều đồ trang sức phong thủy, 
+                            nên chọn từ 1-2 cái chính.
+                        </p>
+                        <p>
+                            <strong>Chăm sóc:</strong> Cần vệ sinh sạch sẽ và tích cực tâm niệm để duy trì năng lượng.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <p>
+                            <strong>💡 Lưu ý quan trọng:</strong> Phong thủy là một công cụ hỗ trợ, không phải là thay thế 
+                            cho nỗ lực cá nhân, công việc chăm sóc sức khỏe. Việc áp dụng phong thủy kết hợp với 
+                            tư duy tích cực, hành động đúng đắn sẽ mang lại kết quả tốt nhất.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Về Chúng Tôi</h5>
+                    <p>Chuyên cung cấp vật phẩm phong thủy tự nhiên, mang lại tài lộc và bình an.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Hỗ Trợ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" style="color:#ccc;text-decoration:none;">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" style="color:#ccc;text-decoration:none;">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Liên Hệ</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone-alt me-2"></i>0123 456 789</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>TP. Hồ Chí Minh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="phongthuy.js"></script>
+
+    <script>
+        // Khởi tạo giao diện sau khi tải trang
+        window.addEventListener('DOMContentLoaded', () => {
+            Auth.updateNavUI();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Yêu Thích - Phong Thủy</title>
+    <style>
+        :root { --primary-color: #8b0000; --accent-color: #d4af37; }
+        body { font-family: Arial, sans-serif; background: #f9f9f9; }
+        .topbar { background-color: var(--primary-color); color: white; font-size: 0.85rem; }
+        .navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1.5rem; }
+        .nav-link { font-weight: 500; text-transform: uppercase; color: #333; }
+        .section-title { color: var(--primary-color); font-weight: bold; border-left: 4px solid var(--accent-color); padding-left: 12px; }
+        .wish-card { background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); padding: 16px; display: flex; align-items: center; gap: 16px; margin-bottom: 16px; transition: 0.3s; }
+        .wish-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+        .wish-name { font-weight: bold; color: #333; font-size: 1rem; }
+        .wish-price { color: var(--primary-color); font-weight: bold; font-size: 1.1rem; }
+        .btn-remove-wish { background: none; border: none; color: #dc3545; cursor: pointer; font-size: 1.2rem; transition: 0.2s; }
+        .btn-remove-wish:hover { transform: scale(1.2); }
+        .empty-wish { text-align: center; padding: 80px 20px; color: #aaa; }
+        .empty-wish i { font-size: 5rem; color: #f5c6cb; margin-bottom: 20px; }
+        footer { background-color: #222; color: #ccc; }
+        footer h5 { color: var(--accent-color); font-weight: bold; }
+        .footer-bottom { background-color: #111; padding: 15px 0; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <div class="topbar py-1 d-none d-sm-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div><i class="fas fa-phone-alt"></i> Hotline: 0123 456 789</div>
+            <div>
+                <a href="dangnhap.html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
+                <a href="dangnhap.html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
+                <span class="auth-user-menu" style="display:none;">
+                    <i class="fas fa-user me-1"></i><span class="auth-user-name text-white fw-bold"></span>
+                    <a href="donhang.html" class="text-white text-decoration-none ms-3">Đơn hàng</a>
+                    <a href="#" onclick="Auth.logout()" class="text-white text-decoration-none ms-3">Đăng xuất</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">PHONG THỦY</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="yeuthich.html" class="btn btn-outline-danger position-relative">
+                        <i class="fas fa-heart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger wishlist-badge" style="display:none;">0</span>
+                    </a>
+                    <a href="giohang.html" class="btn btn-outline-dark position-relative">
+                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1">
+        <div class="container my-5">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none" style="color:var(--primary-color)">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Yêu thích</li>
+                </ol>
+            </nav>
+            <h3 class="section-title mb-4"><i class="fas fa-heart me-2"></i>Danh Sách Yêu Thích</h3>
+            <div id="wish-container"></div>
+        </div>
+    </main>
+
+    <footer class="pt-5 mt-auto">
+        <div class="footer-bottom text-center"><p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy.</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/phongthuy-functions.js"></script>
+    <script>
+        const fmt = n => Number(n).toLocaleString('vi-VN') + ' đ';
+
+        function renderWishlist() {
+            const items = Wishlist.getAll();
+            const container = document.getElementById('wish-container');
+            if (items.length === 0) {
+                container.innerHTML = `<div class="empty-wish">
+                    <i class="fas fa-heart-broken d-block"></i>
+                    <h5>Danh sách yêu thích trống</h5>
+                    <p>Hãy thêm sản phẩm bạn yêu thích để xem lại sau!</p>
+                    <a href="index.html" class="btn mt-2 fw-bold" style="background:var(--primary-color);color:white;">
+                        <i class="fas fa-store me-2"></i>Khám Phá Sản Phẩm
+                    </a>
+                </div>`;
+                return;
+            }
+            container.innerHTML = `<div class="row g-3">${items.map(item => `
+                <div class="col-12">
+                    <div class="wish-card">
+                        <div style="background:#fdf5f5;width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-gem" style="color:var(--accent-color);font-size:1.6rem;"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <div class="wish-name">${item.name}</div>
+                            <div class="wish-price">${fmt(item.price)}</div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button onclick="addToCartFromWish('${item.id}','${item.name}',${item.price},'${item.url}')"
+                                class="btn btn-sm fw-bold" style="background:var(--primary-color);color:white;white-space:nowrap;">
+                                <i class="fas fa-cart-plus me-1"></i>Thêm vào giỏ
+                            </button>
+                            <a href="${item.url}" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <button class="btn-remove-wish" onclick="removeFromWish('${item.id}')" title="Xóa khỏi yêu thích">
+                                <i class="fas fa-times-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>`).join('')}
+            </div>
+            <div class="mt-4 d-flex gap-3">
+                <button onclick="addAllToCart()" class="btn fw-bold py-2 px-4" style="background:var(--primary-color);color:white;">
+                    <i class="fas fa-cart-plus me-2"></i>Thêm tất cả vào giỏ
+                </button>
+                <button onclick="clearWishlist()" class="btn btn-outline-danger fw-bold py-2 px-4">
+                    <i class="fas fa-trash me-2"></i>Xóa tất cả
+                </button>
+            </div>`;
+        }
+
+        function addToCartFromWish(id, name, price, url) {
+            Cart.add({ id, name, price, qty: 1, url });
+        }
+        function removeFromWish(id) { Wishlist.remove(id); renderWishlist(); }
+        function addAllToCart() {
+            Wishlist.getAll().forEach(item => Cart.add({ ..item, qty: 1 }));
+            Cart.showToast('✅ Đã thêm tất cả vào giỏ hàng!', 'success');
+        }
+        function clearWishlist() {
+            if (confirm('Xóa toàn bộ danh sách yêu thích?')) { Wishlist.save([]); renderWishlist(); }
+        }
+
+        renderWishlist();
+    </script>
+</body>
+</html>
