@@ -2,10 +2,10 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1..0">
-    <link rel="stylesheet" href="css/bootstrap..min..css">
-    <script src="js/bootstrap..bundle..js"></script>
-    <link rel="stylesheet" href="https://cdnjs..cloudflare..com/ajax/libs/font-awesome/6..0..0/css/all..min..css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Chi Tiết Sản Phẩm - Tượng Phật Di Lặc Bằng Gỗ</title>
     <style>
         :root {
@@ -15,24 +15,24 @@
         body { font-family: Arial, sans-serif; background-color: #f9f9f9; }
         
         /* Cấu trúc Header & Footer */
-        ..topbar { background-color: var(--primary-color); color: white; font-size: 0..85rem; }
-        nav..navbar ..container a..navbar-brand { color: var(--primary-color); font-weight: 800; font-size: 1..5rem; }
-        ..nav-link { font-weight: 500; text-transform: uppercase; color: #333; }
-        ..nav-link:hover { color: var(--primary-color); }
+        .topbar { background-color: var(--primary-color); color: white; font-size: 0.85rem; }
+        nav.navbar .container a.navbar-brand { color: var(--primary-color); font-weight: 800; font-size: 1.5rem; }
+        .nav-link { font-weight: 500; text-transform: uppercase; color: #333; }
+        .nav-link:hover { color: var(--primary-color); }
         
         @media (max-width: 991px) {
-            ..search-cart-mobile { margin-top: 15px; }
+            .search-cart-mobile { margin-top: 15px; }
         }
 
         /* css TRANG CHI TIẾT SẢN PHẨM */
-        ..product-detail-box {
+        .product-detail-box {
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0..05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             padding: 30px;
         }
         
-        ..main-image {
+        .main-image {
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
@@ -40,43 +40,43 @@
             border: 1px solid #eee;
         }
 
-        ..product-title {
+        .product-title {
             color: #333;
             font-weight: bold;
             font-size: 2rem;
         }
 
-        ..product-price-detail {
+        .product-price-detail {
             color: var(--primary-color);
             font-size: 2rem;
             font-weight: bold;
         }
 
-        ..specs-list li {
+        .specs-list li {
             margin-bottom: 10px;
-            font-size: 1..05rem;
+            font-size: 1.05rem;
         }
 
-        ..btn-add-to-cart {
+        .btn-add-to-cart {
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
             background-color: transparent;
             font-weight: bold;
-            transition: 0..3s;
+            transition: 0.3s;
         }
-        ..btn-add-to-cart:hover {
+        .btn-add-to-cart:hover {
             background-color: #fceceb;
         }
 
-        ..btn-buy-now {
+        .btn-buy-now {
             background-color: var(--primary-color);
             border: 2px solid var(--primary-color);
             color: white;
             font-weight: bold;
-            transition: 0..3s;
+            transition: 0.3s;
             cursor: pointer;
         }
-        ..btn-buy-now:hover {
+        .btn-buy-now:hover {
             background-color: #660000;
             border-color: #660000;
             color: white;
@@ -84,12 +84,12 @@
 
         footer { background-color: #222; color: #ccc; }
         footer h5 { color: var(--accent-color); font-weight: bold; }
-        footer a { color: #ccc; text-decoration: none; transition: 0..3s; }
+        footer a { color: #ccc; text-decoration: none; transition: 0.3s; }
         footer a:hover { color: var(--accent-color); }
-        ..footer-bottom { background-color: #111; padding: 15px 0; }
+        .footer-bottom { background-color: #111; padding: 15px 0; }
 
         /* Thông báo toast */
-        ..toast-notification {
+        .toast-notification {
             position: fixed;
             top: 20px;
             right: 20px;
@@ -97,9 +97,9 @@
             color: white;
             padding: 15px 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0..15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             z-index: 1000;
-            animation: slideIn 0..3s ease-out;
+            animation: slideIn 0.3s ease-out;
         }
 
         @keyframes slideIn {
@@ -121,35 +121,35 @@
         }
 
         /* Modal css */
-        ..modal-header {
+        .modal-header {
             background-color: var(--primary-color);
             color: white;
         }
 
-        ..modal-body {
+        .modal-body {
             max-height: 70vh;
             overflow-y: auto;
         }
 
-        ..modal-footer {
+        .modal-footer {
             border-top: 1px solid #dee2e6;
         }
 
-        ..form-label {
+        .form-label {
             color: #333;
             font-weight: 600;
         }
 
-        ..text-danger {
+        .text-danger {
             color: #dc3545;
         }
 
-        ..alert-info {
+        .alert-info {
             background-color: #e7f3ff;
             border-left: 4px solid var(--primary-color);
         }
 
-        ..alert-warning {
+        .alert-warning {
             background-color: #fff3cd;
             border-left: 4px solid #ffc107;
         }
@@ -161,21 +161,21 @@
         <div class="container d-flex justify-content-between">
             <div><i class="fas fa-phone-alt"></i> Hotline: 0123 456 789</div>
             <div>
-                  <a href="dangnhap..html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
-            <a href="dangnhap..html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
+                  <a href="dangnhap.html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
+            <a href="dangnhap.html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
             </div>
         </div>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index..html">PHONG THỦY</a>
+            <a class="navbar-brand" href="index.html">PHONG THỦY</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link" href="index..html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Sản phẩm</a>
                         <ul class="dropdown-menu border-0 shadow-sm">
@@ -187,7 +187,7 @@
                 </ul>
             </div>
             <div class="d-flex search-cart-mobile align-items-center">
-                    <a href="giohang..html" class="btn btn-outline-dark position-relative text-nowrap">
+                    <a href="giohang.html" class="btn btn-outline-dark position-relative text-nowrap">
                         <i class="fas fa-shopping-cart"></i> <span class="d-none d-lg-inline">Giỏ hàng</span>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">0</span>
                     </a>
@@ -200,7 +200,7 @@
             
             <nav aria-label="breadcrumb" class="mb-4">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index..html" class="text-decoration-none" style="color: var(--primary-color);">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none" style="color: var(--primary-color);">Trang chủ</a></li>
                     <li class="breadcrumb-item"><a href="#" class="text-decoration-none" style="color: var(--primary-color);">Tượng Phật Phong Thủy</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Tượng Phật Di Lặc</li>
                 </ol>
@@ -210,7 +210,7 @@
                 <div class="row gx-5">
                     
                     <div class="col-md-5 mb-4 mb-md-0">
-                        <img src="img/tuongphatdilac..jpg" alt="Tượng Phật Di Lặc Bằng Gỗ" class="main-image shadow-sm">
+                        <img src="img/tuongphatdilac.jpg" alt="Tượng Phật Di Lặc Bằng Gỗ" class="main-image shadow-sm">
                     </div>
 
                     <div class="col-md-7">
@@ -218,11 +218,11 @@
                         <p class="text-muted">Mã sản phẩm: DL-GO-09 | Tình trạng: <span class="text-success fw-bold">Còn hàng</span></p>
                         
                         <div class="my-3">
-                            <span class="product-price-detail">3..500..000 đ</span>
+                            <span class="product-price-detail">3.500.000 đ</span>
                         </div>
 
                         <p class="fs-6 mt-3 mb-4 text-justify">
-                            Phật Di Lặc (Phật Cười) là biểu tượng tuyệt đối của hạnh phúc trong phong thủy.. Đặt tượng Phật Di Lặc trong nhà giúp hóa giải mọi buồn phiền, giận dữ thành niềm vui, mang lại sự bình an, vui vẻ và tài lộc dồi dào.. Tượng được chế tác từ gỗ Hương tự nhiên nguyên khối, vân gỗ tuyệt đẹp, mang mùi hương nhẹ nhàng giúp an thần, thư giãn..
+                            Phật Di Lặc (Phật Cười) là biểu tượng tuyệt đối của hạnh phúc trong phong thủy. Đặt tượng Phật Di Lặc trong nhà giúp hóa giải mọi buồn phiền, giận dữ thành niềm vui, mang lại sự bình an, vui vẻ và tài lộc dồi dào. Tượng được chế tác từ gỗ Hương tự nhiên nguyên khối, vân gỗ tuyệt đẹp, mang mùi hương nhẹ nhàng giúp an thần, thư giãn.
                         </p>
 
                         <ul class="list-unstyled specs-list mb-4">
@@ -244,7 +244,7 @@
                                         data-id="DL-GO-09" 
                                         data-name="Tượng Phật Di Lặc Kéo Bao Tiền Gỗ Hương" 
                                         data-price="3500000" 
-                                        data-img="img/tuongphatdilac..jpg">
+                                        data-img="img/tuongphatdilac.jpg">
                                     <i class="fas fa-cart-plus me-2"></i> THÊM VÀO GIỎ
                                 </button>
                             </div>
@@ -259,15 +259,15 @@
                             <div class="row text-center">
                                 <div class="col-4">
                                     <i class="fas fa-truck text-success fs-4 mb-1"></i>
-                                    <p class="mb-0" style="font-size: 0..85rem;">Freeship Toàn Quốc</p>
+                                    <p class="mb-0" style="font-size: 0.85rem;">Freeship Toàn Quốc</p>
                                 </div>
                                 <div class="col-4 border-start border-end">
                                     <i class="fas fa-box-open text-warning fs-4 mb-1"></i>
-                                    <p class="mb-0" style="font-size: 0..85rem;">Kiểm tra khi nhận</p>
+                                    <p class="mb-0" style="font-size: 0.85rem;">Kiểm tra khi nhận</p>
                                 </div>
                                 <div class="col-4">
                                     <i class="fas fa-hammer text-info fs-4 mb-1"></i>
-                                    <p class="mb-0" style="font-size: 0..85rem;">Bảo hành nứt nẻ</p>
+                                    <p class="mb-0" style="font-size: 0.85rem;">Bảo hành nứt nẻ</p>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +284,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5>Về Chúng Tôi</h5>
-                    <p>Chuyên cung cấp vật phẩm phong thủy tự nhiên, mang lại tài lộc và bình an..</p>
+                    <p>Chuyên cung cấp vật phẩm phong thủy tự nhiên, mang lại tài lộc và bình an.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5>Hỗ Trợ</h5>
@@ -297,13 +297,13 @@
                     <h5>Liên Hệ</h5>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-phone-alt me-2"></i> 0123 456 789</li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i> TP.. Hồ Chí Minh</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> TP. Hồ Chí Minh</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy..</p>
+            <p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy.</p>
         </div>
     </footer>
 
@@ -352,7 +352,7 @@
                             <select class="form-select" id="province" required>
                                 <option value="">-- Chọn Tỉnh/Thành phố --</option>
                                 <option value="Hà Nội">Hà Nội</option>
-                                <option value="TP.. Hồ Chí Minh">TP.. Hồ Chí Minh</option>
+                                <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
                                 <option value="Đà Nẵng">Đà Nẵng</option>
                                 <option value="Hải Phòng">Hải Phòng</option>
                                 <option value="Cần Thơ">Cần Thơ</option>
@@ -370,7 +370,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Địa chỉ chi tiết <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="address" rows="2" placeholder="Nhập số nhà, tên đường...." required></textarea>
+                            <textarea class="form-control" id="address" rows="2" placeholder="Nhập số nhà, tên đường.." required></textarea>
                         </div>
 
                         <!-- Ghi chú -->
@@ -408,8 +408,8 @@
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
-                                <span style="font-size: 1..1rem;">💰 Tổng thanh toán:</span>
-                                <strong style="font-size: 1..2rem; color: var(--primary-color);" id="finalTotal">0 đ</strong>
+                                <span style="font-size: 1.1rem;">💰 Tổng thanh toán:</span>
+                                <strong style="font-size: 1.2rem; color: var(--primary-color);" id="finalTotal">0 đ</strong>
                             </div>
                         </div>
 
@@ -425,18 +425,18 @@
         </div>
     </div>
 
-    <script src="js/phongthuy-functions..js"></script>
-    <script src="https://cdn..jsdelivr..net/npm/bootstrap@5..3..0/dist/js/bootstrap..bundle..min..js"></script>
+    <script src="js/phongthuy-functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         // ===== HÀM THÊM VÀO GIỎ HÀNG =====
         function themVaoGio(btn) {
-            let id = btn..getAttribute('data-id');
-            let name = btn..getAttribute('data-name');
-            let price = parseInt(btn..getAttribute('data-price'));
-            let img = btn..getAttribute('data-img');
+            let id = btn.getAttribute('data-id');
+            let name = btn.getAttribute('data-name');
+            let price = parseInt(btn.getAttribute('data-price'));
+            let img = btn.getAttribute('data-img');
             
-            let qty = parseInt(document..getElementById('quantity')..value) || 1;
+            let qty = parseInt(document.getElementById('quantity').value) || 1;
 
             let item = {
                 id: id,
@@ -447,22 +447,22 @@
             };
 
             let storageKey = 'cart_items';
-            let cart = jsON..parse(localStorage..getItem(storageKey)) || [];
+            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
 
             let found = false;
-            for (let i = 0; i < cart..length; i++) {
-                if (cart[i]..id === item..id) {
-                    cart[i]..qty += item..qty;
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].id === item.id) {
+                    cart[i].qty += item.qty;
                     found = true;
                     break;
                 }
             }
 
             if (!found) {
-                cart..push(item);
+                cart.push(item);
             }
 
-            localStorage..setItem(storageKey, jsON..stringify(cart));
+            localStorage.setItem(storageKey, jsON.stringify(cart));
 
             showToastNotification(`✅ Đã thêm "${name}" vào giỏ hàng!`);
 
@@ -471,70 +471,70 @@
 
         // ===== HÀM HIỂN THỊ THÔNG BÁO TOAST =====
         function showToastNotification(message) {
-            const toast = document..createElement('div');
-            toast..className = 'toast-notification';
-            toast..textContent = message;
-            document..body..appendChild(toast);
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.textContent = message;
+            document.body.appendChild(toast);
 
             setTimeout(() => {
-                toast..style..animation = 'slideOut 0..3s ease-out forwards';
-                setTimeout(() => toast..remove(), 300);
+                toast.style.animation = 'slideOut 0.3s ease-out forwards';
+                setTimeout(() => toast.remove(), 300);
             }, 3000);
         }
 
         // ===== HÀM CẬP NHẬT BADGE GIỎ HÀNG =====
         function updateCartBadge() {
             let storageKey = 'cart_items';
-            let cart = jsON..parse(localStorage..getItem(storageKey)) || [];
+            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
             let total = 0;
             
             for (let item of cart) {
-                total += item..qty;
+                total += item.qty;
             }
             
-            document..querySelector('..cart-badge')..innerText = total;
+            document.querySelector('.cart-badge').innerText = total;
         }
 
         // ===== MỞ MODAL MUA NGAY =====
         function openCheckout() {
-            let productName = document..querySelector('..product-title')..innerText;
-            let productPrice = parseInt(document..querySelector('..product-price-detail')..innerText..replace(/\D/g, ''));
-            let productQty = parseInt(document..getElementById('quantity')..value) || 1;
+            let productName = document.querySelector('.product-title').innerText;
+            let productPrice = parseInt(document.querySelector('.product-price-detail').innerText.replace(/\D/g, ''));
+            let productQty = parseInt(document.getElementById('quantity').value) || 1;
 
-            let productInfo = `${productName} x ${productQty} = ${(productPrice * productQty)..toLocaleString()} đ`;
-            document..getElementById('productInfo')..innerText = productInfo;
+            let productInfo = `${productName} x ${productQty} = ${(productPrice * productQty).toLocaleString()} đ`;
+            document.getElementById('productInfo').innerText = productInfo;
 
             let totalPrice = productPrice * productQty;
-            document..getElementById('totalPrice')..innerText = totalPrice..toLocaleString() + ' đ';
-            document..getElementById('finalTotal')..innerText = totalPrice..toLocaleString() + ' đ';
+            document.getElementById('totalPrice').innerText = totalPrice.toLocaleString() + ' đ';
+            document.getElementById('finalTotal').innerText = totalPrice.toLocaleString() + ' đ';
 
-            let modal = new bootstrap..Modal(document..getElementById('checkoutModal'));
-            modal..show();
+            let modal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+            modal.show();
         }
 
         // ===== XỬ LÝ GỬI ĐƠN HÀNG =====
         function submitCheckout() {
-            let fullName = document..getElementById('fullName')..value..trim();
-            let phone = document..getElementById('phone')..value..trim();
-            let email = document..getElementById('email')..value..trim();
-            let province = document..getElementById('province')..value;
-            let district = document..getElementById('district')..value..trim();
-            let address = document..getElementById('address')..value..trim();
-            let notes = document..getElementById('notes')..value..trim();
-            let payment = document..querySelector('input[name="payment"]:checked')..value;
+            let fullName = document.getElementById('fullName').value.trim();
+            let phone = document.getElementById('phone').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let province = document.getElementById('province').value;
+            let district = document.getElementById('district').value.trim();
+            let address = document.getElementById('address').value.trim();
+            let notes = document.getElementById('notes').value.trim();
+            let payment = document.querySelector('input[name="payment"]:checked').value;
 
             if (!fullName || !phone || !province || !district || !address) {
                 alert('❌ Vui lòng điền đầy đủ thông tin bắt buộc!');
                 return;
             }
 
-            if (!/^0\d{9}$/..test(phone)) {
+            if (!/^0\d{9}$/.test(phone)) {
                 alert('❌ Số điện thoại không hợp lệ (phải bắt đầu bằng 0 và có 10 chữ số)!');
                 return;
             }
 
-            let productInfo = document..getElementById('productInfo')..innerText;
-            let totalPrice = document..getElementById('finalTotal')..innerText;
+            let productInfo = document.getElementById('productInfo').innerText;
+            let totalPrice = document.getElementById('finalTotal').innerText;
 
             let message = `
 📦 ĐƠN HÀNG MUA NGAY
@@ -566,7 +566,7 @@ ${payment === 'cod' ? '💵 Thanh toán khi nhận hàng (COD)' : '🏦 Chuyển
             alert(message);
 
             let order = {
-                id: 'ORD-' + Date..now(),
+                id: 'ORD-' + Date.now(),
                 fullName: fullName,
                 phone: phone,
                 email: email,
@@ -577,56 +577,56 @@ ${payment === 'cod' ? '💵 Thanh toán khi nhận hàng (COD)' : '🏦 Chuyển
                 payment: payment,
                 product: productInfo,
                 total: totalPrice,
-                date: new Date()..toLocaleString('vi-VN'),
+                date: new Date().toLocaleString('vi-VN'),
                 status: '⏳ Chờ xác nhận'
             };
 
-            let orders = jsON..parse(localStorage..getItem('orders')) || [];
-            orders..push(order);
-            localStorage..setItem('orders', jsON..stringify(orders));
+            let orders = jsON.parse(localStorage.getItem('orders')) || [];
+            orders.push(order);
+            localStorage.setItem('orders', jsON.stringify(orders));
 
-            console..log('✅ Đơn hàng đã được lưu:', order);
+            console.log('✅ Đơn hàng đã được lưu:', order);
 
             // ✅ FIX: Xóa backdrop ngay lập tức
-            const modalElement = document..getElementById('checkoutModal');
+            const modalElement = document.getElementById('checkoutModal');
             
             // Lấy tất cả backdrop elements
-            const backdrops = document..querySelectorAll('..modal-backdrop');
-            backdrops..forEach(backdrop => {
-                backdrop..remove();
+            const backdrops = document.querySelectorAll('.modal-backdrop');
+            backdrops.forEach(backdrop => {
+                backdrop.remove();
             });
 
             // Đóng modal
-            const modalInstance = bootstrap..Modal..getInstance(modalElement);
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
             if (modalInstance) {
-                modalInstance..hide();
+                modalInstance.hide();
             }
 
             // Xóa class modal-open từ body
-            document..body..classList..remove('modal-open');
-            document..body..style..overflow = '';
-            document..body..style..paddingRight = '';
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
 
             // Xóa form
-            document..getElementById('checkoutForm')..reset();
+            document.getElementById('checkoutForm').reset();
 
             // Hiển thị thông báo thành công
-            showToastNotification('✅ Đơn hàng được tạo thành công! Số đơn: ' + order..id);
+            showToastNotification('✅ Đơn hàng được tạo thành công! Số đơn: ' + order.id);
         }
 
         // ===== CHẠY KHI TRANG TẢI =====
-        window..addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             updateCartBadge();
 
             // ✅ Event listener để xóa backdrop khi modal đóng
-            const checkoutModal = document..getElementById('checkoutModal');
-            checkoutModal..addEventListener('hidden..bs..modal', function () {
+            const checkoutModal = document.getElementById('checkoutModal');
+            checkoutModal.addEventListener('hidden.bs.modal', function () {
                 // Xóa all backdrops
-                document..querySelectorAll('..modal-backdrop')..forEach(el => el..remove());
+                document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
                 // Xóa overflow từ body
-                document..body..style..overflow = '';
-                document..body..style..paddingRight = '';
-                document..body..classList..remove('modal-open');
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+                document.body.classList.remove('modal-open');
             });
         });
     </script>

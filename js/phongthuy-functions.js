@@ -89,7 +89,7 @@ const Orders = {
   getAll() { return jsON.parse(localStorage.getItem('pt_orders') || '[]'); },
   place(orderData) {
     const orders = Orders.getAll();
-    const order = { id: 'DH' + Date.now(), ..orderData, status: 'pending', statusText: 'Chờ xác nhận', createdAt: Date.now(), items: Cart.getAll(), total: Cart.total() };
+    const order = { id: 'DH' + Date.now(), .orderData, status: 'pending', statusText: 'Chờ xác nhận', createdAt: Date.now(), items: Cart.getAll(), total: Cart.total() };
     // Apply coupon discount
     if (orderData.couponDiscount) order.total = Math.max(0, order.total - orderData.couponDiscount);
     orders.unshift(order);
@@ -199,7 +199,7 @@ const Reviews = {
   add(productId, review) {
     const all = Reviews.getAll();
     if (!all[productId]) all[productId] = [];
-    all[productId].unshift({ ..review, id: Date.now(), createdAt: Date.now() });
+    all[productId].unshift({ .review, id: Date.now(), createdAt: Date.now() });
     localStorage.setItem('pt_reviews', jsON.stringify(all));
   },
   avgRating(productId) {
@@ -232,7 +232,7 @@ const Coupon = {
   validate(code) {
     const c = Coupon.codes[code.toUpperCase().trim()];
     if (!c) return { ok: false, msg: 'Mã giảm giá không hợp lệ' };
-    return { ok: true, ..c };
+    return { ok: true, .c };
   },
   calcDiscount(code, total) {
     const c = Coupon.codes[code.toUpperCase().trim()];
@@ -326,7 +326,7 @@ const FloatingButtons = {
           </div>
         </div>
         <div style="padding:10px;border-top:1px solid #eee;display:flex;gap:8px;">
-          <input id="pt-chat-input" type="text" placeholder="Nhập tin nhắn.." 
+          <input id="pt-chat-input" type="text" placeholder="Nhập tin nhắn." 
             style="flex:1;border:1px solid #ddd;border-radius:20px;padding:8px 14px;font-size:0.9rem;outline:none;"
             onkeydown="if(event.key==='Enter') FloatingButtons.sendMsg()">
           <button onclick="FloatingButtons.sendMsg()" style="background:#8b0000;color:white;border:none;
@@ -375,7 +375,7 @@ const FloatingButtons = {
   },
 
   autoReplies: {
-    'tư vấn': ['Dạ bạn quan tâm đến sản phẩm nào ạ? Chúng tôi có vòng tay, tượng, vật phẩm chiêu tài.. 🙏', 'Bạn có thể cho biết mệnh của mình để tư vấn vật phẩm phù hợp không ạ?'],
+    'tư vấn': ['Dạ bạn quan tâm đến sản phẩm nào ạ? Chúng tôi có vòng tay, tượng, vật phẩm chiêu tài. 🙏', 'Bạn có thể cho biết mệnh của mình để tư vấn vật phẩm phù hợp không ạ?'],
     'đơn hàng': ['Bạn có thể vào mục "Đơn hàng của tôi" để tra cứu trạng thái nhé ạ 📦', 'Hoặc cung cấp mã đơn hàng để chúng tôi hỗ trợ nhanh hơn!'],
     'đổi trả': ['Chính sách đổi trả trong vòng 7 ngày kể từ ngày nhận hàng ạ 🔄', 'Sản phẩm đổi trả cần còn nguyên vẹn và đầy đủ phụ kiện. Hotline: 0123 456 789'],
     'giá': ['Giá sản phẩm từ 250.000đ đến 4.500.000đ. Bạn muốn xem sản phẩm trong khoảng giá nào? 💰', 'Chúng tôi có nhiều ưu đãi hấp dẫn, đặc biệt freeship toàn quốc! 🚚'],
@@ -485,7 +485,7 @@ const ProductFilter = {
     if (sort) {
       const container = document.querySelector('.product-grid');
       if (container) {
-        const items = [..container.querySelectorAll('.product-card-wrapper')].filter(c => c.style.display !== 'none');
+        const items = [.container.querySelectorAll('.product-card-wrapper')].filter(c => c.style.display !== 'none');
         items.sort((a, b) => {
           if (sort === 'price-asc') return parseInt(a.dataset.price) - parseInt(b.dataset.price);
           if (sort === 'price-desc') return parseInt(b.dataset.price) - parseInt(a.dataset.price);

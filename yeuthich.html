@@ -140,7 +140,7 @@
         }
         function removeFromWish(id) { Wishlist.remove(id); renderWishlist(); }
         function addAllToCart() {
-            Wishlist.getAll().forEach(item => Cart.add({ ..item, qty: 1 }));
+            Wishlist.getAll().forEach(item => Cart.add({ .item, qty: 1 }));
             Cart.showToast('✅ Đã thêm tất cả vào giỏ hàng!', 'success');
         }
         function clearWishlist() {

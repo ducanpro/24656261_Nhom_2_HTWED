@@ -2,38 +2,38 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1..0">
-    <link rel="stylesheet" href="https://cdn..jsdelivr..net/npm/bootstrap@5..3..0/dist/css/bootstrap..min..css">
-    <link rel="stylesheet" href="https://cdnjs..cloudflare..com/ajax/libs/font-awesome/6..0..0/css/all..min..css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Giỏ Hàng - Cửa Hàng Phong Thủy</title>
     <style>
         :root { --primary-color: #8b0000; --accent-color: #d4af37; }
         body { font-family: Arial, sans-serif; background-color: #f9f9f9; }
-        ..topbar { background-color: var(--primary-color); color: white; font-size: 0..85rem; }
-        ..navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1..5rem; }
-        ..nav-link { font-weight: 500; text-transform: uppercase; color: #333; }
-        ..nav-link:hover { color: var(--primary-color) !important; }
-        ..section-title { color: var(--primary-color); font-weight: bold; border-left: 4px solid var(--accent-color); padding-left: 12px; }
-        ..cart-table th { background-color: #f8f0f0; color: var(--primary-color); font-weight: 600; }
-        ..cart-table td { vertical-align: middle; }
-        ..qty-input { width: 70px; text-align: center; border: 1px solid #ddd; border-radius: 6px; padding: 4px 8px; }
-        ..btn-remove { color: #dc3545; background: none; border: none; font-size: 1..1rem; cursor: pointer; transition: 0..2s; }
-        ..btn-remove:hover { color: #a00; transform: scale(1..2); }
-        ..order-summary { background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0..06); padding: 24px; position: sticky; top: 80px; }
-        ..order-summary ..total-row { font-size: 1..2rem; font-weight: bold; color: var(--primary-color); border-top: 2px solid #eee; padding-top: 12px; }
-        ..btn-checkout { background-color: var(--primary-color); border: none; color: white; font-weight: bold; padding: 14px; font-size: 1rem; border-radius: 8px; transition: 0..3s; width: 100%; }
-        ..btn-checkout:hover { background-color: #660000; }
-        ..btn-continue { border: 2px solid var(--primary-color); color: var(--primary-color); font-weight: bold; padding: 10px; border-radius: 8px; transition: 0..3s; width: 100%; background: none; cursor: pointer; }
-        ..btn-continue:hover { background: var(--primary-color); color: white; }
-        ..empty-cart { text-align: center; padding: 60px 20px; color: #aaa; }
-        ..empty-cart i { font-size: 5rem; color: #ddd; margin-bottom: 16px; }
-        ..checkout-section { background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0..06); padding: 24px; margin-top: 24px; display: none; }
-        ..form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0..2rem rgba(139,0,0,0..1); }
-        ..coupon-box { background: #fdf5f5; border: 2px dashed #e0b0b0; border-radius: 10px; padding: 14px; }
-        ..coupon-success { background: #d4edda; border: 2px solid #28a745; border-radius: 10px; padding: 12px; }
+        .topbar { background-color: var(--primary-color); color: white; font-size: 0.85rem; }
+        .navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1.5rem; }
+        .nav-link { font-weight: 500; text-transform: uppercase; color: #333; }
+        .nav-link:hover { color: var(--primary-color) !important; }
+        .section-title { color: var(--primary-color); font-weight: bold; border-left: 4px solid var(--accent-color); padding-left: 12px; }
+        .cart-table th { background-color: #f8f0f0; color: var(--primary-color); font-weight: 600; }
+        .cart-table td { vertical-align: middle; }
+        .qty-input { width: 70px; text-align: center; border: 1px solid #ddd; border-radius: 6px; padding: 4px 8px; }
+        .btn-remove { color: #dc3545; background: none; border: none; font-size: 1.1rem; cursor: pointer; transition: 0.2s; }
+        .btn-remove:hover { color: #a00; transform: scale(1.2); }
+        .order-summary { background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); padding: 24px; position: sticky; top: 80px; }
+        .order-summary .total-row { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); border-top: 2px solid #eee; padding-top: 12px; }
+        .btn-checkout { background-color: var(--primary-color); border: none; color: white; font-weight: bold; padding: 14px; font-size: 1rem; border-radius: 8px; transition: 0.3s; width: 100%; }
+        .btn-checkout:hover { background-color: #660000; }
+        .btn-continue { border: 2px solid var(--primary-color); color: var(--primary-color); font-weight: bold; padding: 10px; border-radius: 8px; transition: 0.3s; width: 100%; background: none; cursor: pointer; }
+        .btn-continue:hover { background: var(--primary-color); color: white; }
+        .empty-cart { text-align: center; padding: 60px 20px; color: #aaa; }
+        .empty-cart i { font-size: 5rem; color: #ddd; margin-bottom: 16px; }
+        .checkout-section { background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); padding: 24px; margin-top: 24px; display: none; }
+        .form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0.2rem rgba(139,0,0,0.1); }
+        .coupon-box { background: #fdf5f5; border: 2px dashed #e0b0b0; border-radius: 10px; padding: 14px; }
+        .coupon-success { background: #d4edda; border: 2px solid #28a745; border-radius: 10px; padding: 12px; }
         footer { background-color: #222; color: #ccc; }
         footer h5 { color: var(--accent-color); font-weight: bold; }
-        ..footer-bottom { background-color: #111; padding: 15px 0; }
+        .footer-bottom { background-color: #111; padding: 15px 0; }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -42,12 +42,12 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div><i class="fas fa-phone-alt"></i> Hotline: 0123 456 789</div>
             <div>
-                <a href="dangnhap..html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
-                <a href="dangnhap..html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
+                <a href="dangnhap.html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
+                <a href="dangnhap.html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
                 <span class="auth-user-menu" style="display:none;">
                     <i class="fas fa-user me-1"></i><span class="auth-user-name text-white fw-bold"></span>
-                    <a href="donhang..html" class="text-white text-decoration-none ms-3">Đơn hàng</a>
-                    <a href="#" onclick="Auth..logout()" class="text-white text-decoration-none ms-3">Đăng xuất</a>
+                    <a href="donhang.html" class="text-white text-decoration-none ms-3">Đơn hàng</a>
+                    <a href="#" onclick="Auth.logout()" class="text-white text-decoration-none ms-3">Đăng xuất</a>
                 </span>
             </div>
         </div>
@@ -55,19 +55,19 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index..html">PHONG THỦY</a>
+            <a class="navbar-brand" href="index.html">PHONG THỦY</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav me-auto ms-lg-4">
-                    <li class="nav-item"><a class="nav-link" href="index..html">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index..html">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Sản phẩm</a></li>
                 </ul>
                 <div class="d-flex gap-2">
-                    <a href="yeuthich..html" class="btn btn-outline-danger position-relative">
+                    <a href="yeuthich.html" class="btn btn-outline-danger position-relative">
                         <i class="fas fa-heart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger wishlist-badge" style="display:none;">0</span>
                     </a>
-                    <a href="giohang..html" class="btn btn-outline-dark position-relative">
+                    <a href="giohang.html" class="btn btn-outline-dark position-relative">
                         <i class="fas fa-shopping-cart"></i> Giỏ hàng
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">0</span>
                     </a>
@@ -80,7 +80,7 @@
         <div class="container my-5">
             <nav aria-label="breadcrumb" class="mb-4">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index..html" class="text-decoration-none" style="color:var(--primary-color)">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none" style="color:var(--primary-color)">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Giỏ hàng</li>
                 </ol>
             </nav>
@@ -90,7 +90,7 @@
                 <i class="fas fa-shopping-basket d-block"></i>
                 <h5>Giỏ hàng đang trống</h5>
                 <p>Hãy khám phá các sản phẩm phong thủy!</p>
-                <a href="index..html" class="btn mt-2 fw-bold" style="background:var(--primary-color);color:white;">
+                <a href="index.html" class="btn mt-2 fw-bold" style="background:var(--primary-color);color:white;">
                     <i class="fas fa-store me-2"></i>Tiếp Tục Mua Sắm
                 </a>
             </div>
@@ -111,7 +111,7 @@
                             </table>
                         </div>
                         <div class="d-flex justify-content-between mt-3">
-                            <a href="index..html" class="btn fw-bold" style="border:2px solid var(--primary-color);color:var(--primary-color);">
+                            <a href="index.html" class="btn fw-bold" style="border:2px solid var(--primary-color);color:var(--primary-color);">
                                 <i class="fas fa-arrow-left me-2"></i>Tiếp tục mua sắm
                             </a>
                             <button onclick="clearCart()" class="btn btn-outline-secondary">
@@ -131,13 +131,13 @@
                             <div class="coupon-box mb-3">
                                 <label class="fw-semibold small mb-2 d-block"><i class="fas fa-tag me-1"></i>Mã giảm giá</label>
                                 <div class="input-group input-group-sm">
-                                    <input type="text" id="coupon-input" class="form-control" placeholder="Nhập mã...." style="text-transform:uppercase;">
+                                    <input type="text" id="coupon-input" class="form-control" placeholder="Nhập mã.." style="text-transform:uppercase;">
                                     <button class="btn fw-bold" onclick="applyCoupon()" style="background:var(--primary-color);color:white;border:none;">Áp dụng</button>
                                 </div>
                                 <div id="coupon-msg" class="mt-2 small"></div>
-                                <div class="mt-2" style="font-size:0..75rem;color:#888;">
-                                    Thử: <code onclick="document..getElementById('coupon-input')..value='PHONGTHUY10'" style="cursor:pointer;color:var(--primary-color);">PHONGTHUY10</code> •
-                                    <code onclick="document..getElementById('coupon-input')..value='TAILOC50K'" style="cursor:pointer;color:var(--primary-color);">TAILOC50K</code>
+                                <div class="mt-2" style="font-size:0.75rem;color:#888;">
+                                    Thử: <code onclick="document.getElementById('coupon-input').value='PHONGTHUY10'" style="cursor:pointer;color:var(--primary-color);">PHONGTHUY10</code> •
+                                    <code onclick="document.getElementById('coupon-input').value='TAILOC50K'" style="cursor:pointer;color:var(--primary-color);">TAILOC50K</code>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between mb-2" id="discount-row" style="display:none!important;">
@@ -180,7 +180,7 @@
                         <div class="col-12">
                             <label class="form-label fw-semibold">Email</label>
                             <div class="input-group"><span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            <input type="email" id="ship-email" class="form-control" placeholder="email@example..com"></div>
+                            <input type="email" id="ship-email" class="form-control" placeholder="email@example.com"></div>
                         </div>
                         <div class="col-12">
                             <label class="form-label fw-semibold">Địa chỉ <span class="text-danger">*</span></label>
@@ -190,7 +190,7 @@
                         <div class="col-md-6">
                             <label class="form-label fw-semibold">Tỉnh / Thành phố</label>
                             <select id="ship-city" class="form-select">
-                                <option>TP.. Hồ Chí Minh</option><option>Hà Nội</option>
+                                <option>TP. Hồ Chí Minh</option><option>Hà Nội</option>
                                 <option>Đà Nẵng</option><option>Cần Thơ</option><option>Khác</option>
                             </select>
                         </div>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="col-12">
                             <label class="form-label fw-semibold">Ghi chú</label>
-                            <textarea id="ship-note" class="form-control" rows="2" placeholder="Ghi chú cho người bán...."></textarea>
+                            <textarea id="ship-note" class="form-control" rows="2" placeholder="Ghi chú cho người bán.."></textarea>
                         </div>
                     </div>
 
@@ -229,10 +229,10 @@
                 <p class="text-muted fs-5" id="order-id-display"></p>
                 <p class="text-muted">Chúng tôi sẽ liên hệ xác nhận trong vòng 24 giờ 🙏</p>
                 <div class="d-flex gap-3 justify-content-center mt-4">
-                    <a href="donhang..html" class="btn fw-bold px-4 py-2" style="background:var(--primary-color);color:white;">
+                    <a href="donhang.html" class="btn fw-bold px-4 py-2" style="background:var(--primary-color);color:white;">
                         <i class="fas fa-list me-2"></i>Xem Đơn Hàng
                     </a>
-                    <a href="index..html" class="btn btn-outline-secondary px-4 py-2 fw-bold">
+                    <a href="index.html" class="btn btn-outline-secondary px-4 py-2 fw-bold">
                         <i class="fas fa-store me-2"></i>Tiếp Tục Mua Sắm
                     </a>
                 </div>
@@ -243,47 +243,47 @@
     <footer class="pt-5 mt-auto">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4"><h5>Về Chúng Tôi</h5><p>Chuyên cung cấp vật phẩm phong thủy tự nhiên, mang lại tài lộc và bình an..</p></div>
+                <div class="col-lg-4 mb-4"><h5>Về Chúng Tôi</h5><p>Chuyên cung cấp vật phẩm phong thủy tự nhiên, mang lại tài lộc và bình an.</p></div>
                 <div class="col-lg-4 mb-4"><h5>Hỗ Trợ</h5><ul class="list-unstyled"><li><a href="#" style="color:#ccc;text-decoration:none;">Hướng dẫn mua hàng</a></li><li><a href="#" style="color:#ccc;text-decoration:none;">Chính sách đổi trả</a></li></ul></div>
-                <div class="col-lg-4 mb-4"><h5>Liên Hệ</h5><ul class="list-unstyled"><li><i class="fas fa-phone-alt me-2"></i>0123 456 789</li><li><i class="fas fa-map-marker-alt me-2"></i>TP.. Hồ Chí Minh</li></ul></div>
+                <div class="col-lg-4 mb-4"><h5>Liên Hệ</h5><ul class="list-unstyled"><li><i class="fas fa-phone-alt me-2"></i>0123 456 789</li><li><i class="fas fa-map-marker-alt me-2"></i>TP. Hồ Chí Minh</li></ul></div>
             </div>
         </div>
-        <div class="footer-bottom text-center"><p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy..</p></div>
+        <div class="footer-bottom text-center"><p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy.</p></div>
     </footer>
 
-    <script src="https://cdn..jsdelivr..net/npm/bootstrap@5..3..0/dist/js/bootstrap..bundle..min..js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const fmt = n => Number(n)..toLocaleString('vi-VN') + ' đ';
+        const fmt = n => Number(n).toLocaleString('vi-VN') + ' đ';
         let appliedCoupon = null;
         let discountAmount = 0;
 
         // ===== HÀM RENDER GIỎ HÀNG TỪ LOCALSTORAGE =====
         function renderCart() {
             const storageKey = 'cart_items';
-            const items = jsON..parse(localStorage..getItem(storageKey)) || [];
+            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
             
-            const emptyEl = document..getElementById('empty-cart');
-            const contentEl = document..getElementById('cart-content');
+            const emptyEl = document.getElementById('empty-cart');
+            const contentEl = document.getElementById('cart-content');
             
-            if (items..length === 0) { 
-                emptyEl..style..display = 'block'; 
-                contentEl..style..display = 'none'; 
+            if (items.length === 0) { 
+                emptyEl.style.display = 'block'; 
+                contentEl.style.display = 'none'; 
                 updateCartBadge();
                 return; 
             }
             
-            emptyEl..style..display = 'none'; 
-            contentEl..style..display = 'block';
+            emptyEl.style.display = 'none'; 
+            contentEl.style.display = 'block';
 
-            document..getElementById('cart-tbody')..innerHTML = items..map(item => `
+            document.getElementById('cart-tbody').innerHTML = items.map(item => `
                 <tr>
-                    <td><div class="fw-semibold">${item..name}</div><small class="text-muted">${item..id}</small></td>
-                    <td class="text-center fw-bold" style="color:var(--primary-color);">${fmt(item..price)}</td>
-                    <td class="text-center"><input type="number" class="qty-input" value="${item..qty}" min="1" max="99"
-                        onchange="updateQty('${item..id}', parseInt(this..value))"></td>
-                    <td class="text-center fw-bold" style="color:var(--primary-color);">${fmt(item..price*item..qty)}</td>
-                    <td class="text-center"><button class="btn-remove" onclick="removeItem('${item..id}')"><i class="fas fa-times-circle"></i></button></td>
-                </tr>`)..join('');
+                    <td><div class="fw-semibold">${item.name}</div><small class="text-muted">${item.id}</small></td>
+                    <td class="text-center fw-bold" style="color:var(--primary-color);">${fmt(item.price)}</td>
+                    <td class="text-center"><input type="number" class="qty-input" value="${item.qty}" min="1" max="99"
+                        onchange="updateQty('${item.id}', parseInt(this.value))"></td>
+                    <td class="text-center fw-bold" style="color:var(--primary-color);">${fmt(item.price*item.qty)}</td>
+                    <td class="text-center"><button class="btn-remove" onclick="removeItem('${item.id}')"><i class="fas fa-times-circle"></i></button></td>
+                </tr>`).join('');
 
             updateTotals();
             updateCartBadge();
@@ -292,28 +292,28 @@
         // ===== CẬP NHẬT TỔNG TIỀN =====
         function updateTotals() {
             const storageKey = 'cart_items';
-            const items = jsON..parse(localStorage..getItem(storageKey)) || [];
+            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
             
             let sub = 0;
-            items..forEach(item => {
-                sub += item..price * item..qty;
+            items.forEach(item => {
+                sub += item.price * item.qty;
             });
             
-            document..getElementById('subtotal')..textContent = fmt(sub);
+            document.getElementById('subtotal').textContent = fmt(sub);
             
             if (appliedCoupon) {
                 discountAmount = calculateDiscount(appliedCoupon, sub);
             }
             
-            const total = Math..max(0, sub - discountAmount);
-            document..getElementById('total-price')..textContent = fmt(total);
+            const total = Math.max(0, sub - discountAmount);
+            document.getElementById('total-price').textContent = fmt(total);
             
-            const discRow = document..getElementById('discount-row');
+            const discRow = document.getElementById('discount-row');
             if (discountAmount > 0) { 
-                discRow..style..display = 'flex'; 
-                document..getElementById('discount-amount')..textContent = '-' + fmt(discountAmount); 
+                discRow.style.display = 'flex'; 
+                document.getElementById('discount-amount').textContent = '-' + fmt(discountAmount); 
             } else { 
-                discRow..style..display = 'none'; 
+                discRow.style.display = 'none'; 
             }
         }
 
@@ -327,30 +327,30 @@
             const coupon = coupons[couponCode];
             if (!coupon) return 0;
             
-            if (coupon..type === 'percent') {
-                return Math..floor(subtotal * coupon..value / 100);
+            if (coupon.type === 'percent') {
+                return Math.floor(subtotal * coupon.value / 100);
             } else {
-                return coupon..value;
+                return coupon.value;
             }
         }
 
         // ===== ÁP DỤNG MÃ GIẢM GIÁ =====
         function applyCoupon() {
-            const code = document..getElementById('coupon-input')..value..trim()..toUpperCase();
-            const msgEl = document..getElementById('coupon-msg');
+            const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+            const msgEl = document.getElementById('coupon-msg');
             
             if (!code) { 
-                msgEl..innerHTML = '<span class="text-warning">⚠️ Vui lòng nhập mã giảm giá</span>'; 
+                msgEl.innerHTML = '<span class="text-warning">⚠️ Vui lòng nhập mã giảm giá</span>'; 
                 return; 
             }
             
             const validCoupons = {
                 'PHONGTHUY10': '10% giảm giá tất cả sản phẩm',
-                'TAILOC50K': 'Giảm 50..000đ cho đơn hàng'
+                'TAILOC50K': 'Giảm 50.000đ cho đơn hàng'
             };
             
             if (!validCoupons[code]) { 
-                msgEl..innerHTML = `<span class="text-danger">❌ Mã giảm giá không hợp lệ</span>`; 
+                msgEl.innerHTML = `<span class="text-danger">❌ Mã giảm giá không hợp lệ</span>`; 
                 appliedCoupon = null; 
                 discountAmount = 0; 
                 updateTotals(); 
@@ -359,12 +359,12 @@
             
             appliedCoupon = code;
             const storageKey = 'cart_items';
-            const items = jsON..parse(localStorage..getItem(storageKey)) || [];
+            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
             let sub = 0;
-            items..forEach(item => sub += item..price * item..qty);
+            items.forEach(item => sub += item.price * item.qty);
             
             discountAmount = calculateDiscount(code, sub);
-            msgEl..innerHTML = `<span class="text-success">✅ Áp dụng thành công: <strong>${validCoupons[code]}</strong></span>`;
+            msgEl.innerHTML = `<span class="text-success">✅ Áp dụng thành công: <strong>${validCoupons[code]}</strong></span>`;
             updateTotals();
             alert(`🎁 Mã "${code}" đã được áp dụng!`);
         }
@@ -372,28 +372,28 @@
         // ===== XÓA SẢN PHẨM =====
         function removeItem(id) {
             const storageKey = 'cart_items';
-            let cart = jsON..parse(localStorage..getItem(storageKey)) || [];
-            cart = cart..filter(item => item..id !== id);
-            localStorage..setItem(storageKey, jsON..stringify(cart));
+            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
+            cart = cart.filter(item => item.id !== id);
+            localStorage.setItem(storageKey, jsON.stringify(cart));
             renderCart();
         }
 
         // ===== CẬP NHẬT SỐ LƯỢNG =====
         function updateQty(id, qty) {
             const storageKey = 'cart_items';
-            let cart = jsON..parse(localStorage..getItem(storageKey)) || [];
-            let item = cart..find(i => i..id === id);
+            let cart = jsON.parse(localStorage.getItem(storageKey)) || [];
+            let item = cart.find(i => i.id === id);
             if (item && qty > 0) {
-                item..qty = qty;
+                item.qty = qty;
             }
-            localStorage..setItem(storageKey, jsON..stringify(cart));
+            localStorage.setItem(storageKey, jsON.stringify(cart));
             renderCart();
         }
 
         // ===== XÓA TẤT CẢ =====
         function clearCart() {
             if (confirm('Xóa toàn bộ giỏ hàng?')) {
-                localStorage..setItem('cart_items', jsON..stringify([]));
+                localStorage.setItem('cart_items', jsON.stringify([]));
                 appliedCoupon = null;
                 discountAmount = 0;
                 renderCart();
@@ -403,102 +403,102 @@
         // ===== CẬP NHẬT BADGE GIỎ HÀNG =====
         function updateCartBadge() {
             const storageKey = 'cart_items';
-            const items = jsON..parse(localStorage..getItem(storageKey)) || [];
+            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
             let total = 0;
-            items..forEach(item => total += item..qty);
-            document..querySelector('..cart-badge')..innerText = total;
+            items.forEach(item => total += item.qty);
+            document.querySelector('.cart-badge').innerText = total;
         }
 
         // ===== HIỂN THỊ FORM CHECKOUT =====
         function showCheckoutForm() {
-            const section = document..getElementById('checkout-section');
-            section..style..display = 'block';
-            section..scrollIntoView({ behavior: 'smooth' });
+            const section = document.getElementById('checkout-section');
+            section.style.display = 'block';
+            section.scrollIntoView({ behavior: 'smooth' });
             
             const storageKey = 'cart_items';
-            const items = jsON..parse(localStorage..getItem(storageKey)) || [];
+            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
             let sub = 0;
-            items..forEach(item => sub += item..price * item..qty);
+            items.forEach(item => sub += item.price * item.qty);
             
-            document..getElementById('co-subtotal')..textContent = fmt(sub);
-            document..getElementById('co-total')..textContent = fmt(Math..max(0, sub - discountAmount));
+            document.getElementById('co-subtotal').textContent = fmt(sub);
+            document.getElementById('co-total').textContent = fmt(Math.max(0, sub - discountAmount));
             
-            const coDiscRow = document..getElementById('co-discount-row');
+            const coDiscRow = document.getElementById('co-discount-row');
             if (discountAmount > 0) { 
-                coDiscRow..style..display = 'flex'; 
-                document..getElementById('co-discount')..textContent = '-' + fmt(discountAmount); 
+                coDiscRow.style.display = 'flex'; 
+                document.getElementById('co-discount').textContent = '-' + fmt(discountAmount); 
             } else { 
-                coDiscRow..style..display = 'none'; 
+                coDiscRow.style.display = 'none'; 
             }
         }
 
         // ===== ẨN FORM CHECKOUT =====
         function hideCheckoutForm() { 
-            document..getElementById('checkout-section')..style..display = 'none'; 
+            document.getElementById('checkout-section').style.display = 'none'; 
         }
 
         // ===== ĐẶT HÀNG =====
         function placeOrder() {
-            const name = document..getElementById('ship-name')..value..trim();
-            const phone = document..getElementById('ship-phone')..value..trim();
-            const address = document..getElementById('ship-address')..value..trim();
-            const alertEl = document..getElementById('checkout-alert');
-            alertEl..classList..add('d-none');
+            const name = document.getElementById('ship-name').value.trim();
+            const phone = document.getElementById('ship-phone').value.trim();
+            const address = document.getElementById('ship-address').value.trim();
+            const alertEl = document.getElementById('checkout-alert');
+            alertEl.classList.add('d-none');
             
             if (!name || !phone || !address) { 
-                alertEl..textContent = '⚠️ Vui lòng điền đầy đủ họ tên, số điện thoại và địa chỉ..'; 
-                alertEl..classList..remove('d-none'); 
+                alertEl.textContent = '⚠️ Vui lòng điền đầy đủ họ tên, số điện thoại và địa chỉ.'; 
+                alertEl.classList.remove('d-none'); 
                 return; 
             }
 
             const storageKey = 'cart_items';
-            const items = jsON..parse(localStorage..getItem(storageKey)) || [];
+            const items = jsON.parse(localStorage.getItem(storageKey)) || [];
             let total = 0;
-            items..forEach(item => total += item..price * item..qty);
-            total = Math..max(0, total - discountAmount);
+            items.forEach(item => total += item.price * item.qty);
+            total = Math.max(0, total - discountAmount);
             
             // Tạo mã đơn hàng
-            const orderId = 'ORD-' + Date..now();
+            const orderId = 'ORD-' + Date.now();
             
             // Lưu đơn hàng vào localStorage
-            let orders = jsON..parse(localStorage..getItem('orders')) || [];
-            orders..push({
+            let orders = jsON.parse(localStorage.getItem('orders')) || [];
+            orders.push({
                 id: orderId,
                 name: name,
                 phone: phone,
-                email: document..getElementById('ship-email')..value..trim(),
-                address: address + ', ' + document..getElementById('ship-city')..value,
-                payment: document..getElementById('ship-payment')..value,
-                note: document..getElementById('ship-note')..value..trim(),
+                email: document.getElementById('ship-email').value.trim(),
+                address: address + ', ' + document.getElementById('ship-city').value,
+                payment: document.getElementById('ship-payment').value,
+                note: document.getElementById('ship-note').value.trim(),
                 items: items,
                 couponCode: appliedCoupon,
                 couponDiscount: discountAmount,
                 total: total,
-                date: new Date()..toLocaleString('vi-VN')
+                date: new Date().toLocaleString('vi-VN')
             });
-            localStorage..setItem('orders', jsON..stringify(orders));
+            localStorage.setItem('orders', jsON.stringify(orders));
             
             // Xóa giỏ hàng
-            localStorage..setItem('cart_items', jsON..stringify([]));
+            localStorage.setItem('cart_items', jsON.stringify([]));
             
-            document..getElementById('cart-content')..style..display = 'none';
-            document..getElementById('empty-cart')..style..display = 'none';
-            const s = document..getElementById('order-success');
-            s..style..display = 'block';
-            document..getElementById('order-id-display')..textContent = `Mã đơn: ${orderId} | Tổng tiền: ${fmt(total)}`;
+            document.getElementById('cart-content').style.display = 'none';
+            document.getElementById('empty-cart').style.display = 'none';
+            const s = document.getElementById('order-success');
+            s.style.display = 'block';
+            document.getElementById('order-id-display').textContent = `Mã đơn: ${orderId} | Tổng tiền: ${fmt(total)}`;
             updateCartBadge();
         }
 
         // ===== HANDLE COUPON ENTER KEY =====
-        document..getElementById('coupon-input')..addEventListener('keydown', e => { 
-            if (e..key === 'Enter') applyCoupon(); 
+        document.getElementById('coupon-input').addEventListener('keydown', e => { 
+            if (e.key === 'Enter') applyCoupon(); 
         });
-        document..getElementById('coupon-input')..addEventListener('input', function() { 
-            this..value = this..value..toUpperCase(); 
+        document.getElementById('coupon-input').addEventListener('input', function() { 
+            this.value = this.value.toUpperCase(); 
         });
 
         // ===== CHẠY KHI TRANG TẢI =====
-        window..addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             renderCart();
         });
     </script>

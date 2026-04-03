@@ -2,24 +2,24 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1..0">
-    <link rel="stylesheet" href="https://cdn..jsdelivr..net/npm/bootstrap@5..3..0/dist/css/bootstrap..min..css">
-    <link rel="stylesheet" href="https://cdnjs..cloudflare..com/ajax/libs/font-awesome/6..0..0/css/all..min..css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Đăng Nhập / Đăng Ký - Phong Thủy</title>
     <style>
         :root { --primary-color: #8b0000; --accent-color: #d4af37; }
         body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #f9f0f0 0%, #fff8e7 100%); min-height: 100vh; }
-        ..topbar { background-color: var(--primary-color); color: white; font-size: 0..85rem; }
-        ..navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1..5rem; }
-        ..auth-card { background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(139,0,0,0..12); overflow: hidden; max-width: 480px; width: 100%; }
-        ..auth-tabs ..nav-link { color: #555; font-weight: 600; border-radius: 0; padding: 16px 0; border-bottom: 3px solid transparent; }
-        ..auth-tabs ..nav-link..active { color: var(--primary-color); border-bottom-color: var(--primary-color); background: none; }
-        ..form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0..2rem rgba(139,0,0,0..1); }
-        ..btn-primary-pt { background-color: var(--primary-color); border-color: var(--primary-color); color: white; font-weight: bold; padding: 12px; font-size: 1rem; transition: 0..3s; }
-        ..btn-primary-pt:hover { background-color: #660000; border-color: #660000; color: white; }
-        ..auth-icon { font-size: 3rem; color: var(--accent-color); }
+        .topbar { background-color: var(--primary-color); color: white; font-size: 0.85rem; }
+        .navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1.5rem; }
+        .auth-card { background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(139,0,0,0.12); overflow: hidden; max-width: 480px; width: 100%; }
+        .auth-tabs .nav-link { color: #555; font-weight: 600; border-radius: 0; padding: 16px 0; border-bottom: 3px solid transparent; }
+        .auth-tabs .nav-link.active { color: var(--primary-color); border-bottom-color: var(--primary-color); background: none; }
+        .form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0.2rem rgba(139,0,0,0.1); }
+        .btn-primary-pt { background-color: var(--primary-color); border-color: var(--primary-color); color: white; font-weight: bold; padding: 12px; font-size: 1rem; transition: 0.3s; }
+        .btn-primary-pt:hover { background-color: #660000; border-color: #660000; color: white; }
+        .auth-icon { font-size: 3rem; color: var(--accent-color); }
         footer { background-color: #222; color: #ccc; }
-        ..footer-bottom { background-color: #111; padding: 15px 0; }
+        .footer-bottom { background-color: #111; padding: 15px 0; }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -28,11 +28,11 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div><i class="fas fa-phone-alt"></i> Hotline: 0123 456 789</div>
             <div>
-                <a href="dangnhap..html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
-                <a href="dangnhap..html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
+                <a href="dangnhap.html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
+                <a href="dangnhap.html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
                 <span class="auth-user-menu" style="display:none;">
                     <i class="fas fa-user me-1"></i><span class="auth-user-name text-white"></span>
-                    <a href="#" onclick="Auth..logout()" class="text-white text-decoration-none ms-3">Đăng xuất</a>
+                    <a href="#" onclick="Auth.logout()" class="text-white text-decoration-none ms-3">Đăng xuất</a>
                 </span>
             </div>
         </div>
@@ -40,12 +40,12 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index..html">PHONG THỦY</a>
+            <a class="navbar-brand" href="index.html">PHONG THỦY</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto ms-lg-4">
-                    <li class="nav-item"><a class="nav-link" href="index..html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
                 </ul>
-                <a href="giohang..html" class="btn btn-outline-dark position-relative">
+                <a href="giohang.html" class="btn btn-outline-dark position-relative">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">0</span>
                 </a>
@@ -82,7 +82,7 @@
                         <label class="form-label fw-semibold">Email</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            <input type="email" id="login-email" class="form-control" placeholder="email@example..com">
+                            <input type="email" id="login-email" class="form-control" placeholder="email@example.com">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -97,10 +97,10 @@
                         <i class="fas fa-sign-in-alt me-2"></i>Đăng Nhập
                     </button>
                     <div class="text-center text-muted small mb-3">
-                        Chưa có tài khoản? <a href="#" onclick="document..getElementById('register-tab')..click()" style="color:var(--primary-color);">Đăng ký ngay</a>
+                        Chưa có tài khoản? <a href="#" onclick="document.getElementById('register-tab').click()" style="color:var(--primary-color);">Đăng ký ngay</a>
                     </div>
                     <div class="p-3 bg-light rounded small text-muted">
-                        <strong>Tài khoản demo:</strong> demo@phongthuy..vn | 123456
+                        <strong>Tài khoản demo:</strong> demo@phongthuy.vn | 123456
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
                         <label class="form-label fw-semibold">Email</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            <input type="email" id="reg-email" class="form-control" placeholder="email@example..com">
+                            <input type="email" id="reg-email" class="form-control" placeholder="email@example.com">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -141,7 +141,7 @@
                         <i class="fas fa-user-plus me-2"></i>Tạo Tài Khoản
                     </button>
                     <div class="text-center text-muted small">
-                        Đã có tài khoản? <a href="#" onclick="document..getElementById('login-tab')..click()" style="color:var(--primary-color);">Đăng nhập</a>
+                        Đã có tài khoản? <a href="#" onclick="document.getElementById('login-tab').click()" style="color:var(--primary-color);">Đăng nhập</a>
                     </div>
                 </div>
             </div>
@@ -150,80 +150,80 @@
 
     <footer class="mt-auto">
         <div class="footer-bottom text-center">
-            <p class="mb-0 text-white">&copy; 2026 Cửa Hàng Phong Thủy..</p>
+            <p class="mb-0 text-white">&copy; 2026 Cửa Hàng Phong Thủy.</p>
         </div>
     </footer>
 
-    <script src="https://cdn..jsdelivr..net/npm/bootstrap@5..3..0/dist/js/bootstrap..bundle..min..js"></script>
-    <script src="js/phongthuy-functions..js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/phongthuy-functions.js"></script>
     <script>
         // Seed demo account
         (function() {
-            const users = jsON..parse(localStorage..getItem('pt_users') || '[]');
-            if (!users..find(u => u..email === 'demo@phongthuy..vn')) {
-                users..push({ name: 'Khách Demo', email: 'demo@phongthuy..vn', password: '123456', createdAt: Date..now() });
-                localStorage..setItem('pt_users', jsON..stringify(users));
+            const users = jsON.parse(localStorage.getItem('pt_users') || '[]');
+            if (!users.find(u => u.email === 'demo@phongthuy.vn')) {
+                users.push({ name: 'Khách Demo', email: 'demo@phongthuy.vn', password: '123456', createdAt: Date.now() });
+                localStorage.setItem('pt_users', jsON.stringify(users));
             }
         })();
 
-        window..addEventListener('DOMContentLoaded', () => {
-            if (window..location..search..includes('tab=register')) {
-                document..getElementById('register-tab')..click();
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.search.includes('tab=register')) {
+                document.getElementById('register-tab').click();
             }
-            const user = Auth..getCurrentUser();
+            const user = Auth.getCurrentUser();
             if (user) {
-                const s = document..getElementById('login-success');
-                s..textContent = `Bạn đã đăng nhập: ${user..name}.. Đang chuyển hướng....`;
-                s..classList..remove('d-none');
-                setTimeout(() => window..location..href = 'index..html', 1500);
+                const s = document.getElementById('login-success');
+                s.textContent = `Bạn đã đăng nhập: ${user.name}. Đang chuyển hướng..`;
+                s.classList.remove('d-none');
+                setTimeout(() => window.location.href = 'index.html', 1500);
             }
         });
 
         function togglePass(id) {
-            const el = document..getElementById(id);
-            el..type = el..type === 'password' ? 'text' : 'password';
+            const el = document.getElementById(id);
+            el.type = el.type === 'password' ? 'text' : 'password';
         }
 
         function doLogin() {
-            const email = document..getElementById('login-email')..value..trim();
-            const pass = document..getElementById('login-password')..value;
-            const alertEl = document..getElementById('login-alert');
-            const successEl = document..getElementById('login-success');
-            alertEl..classList..add('d-none');
-            successEl..classList..add('d-none');
+            const email = document.getElementById('login-email').value.trim();
+            const pass = document.getElementById('login-password').value;
+            const alertEl = document.getElementById('login-alert');
+            const successEl = document.getElementById('login-success');
+            alertEl.classList.add('d-none');
+            successEl.classList.add('d-none');
 
-            if (!email || !pass) { alertEl..textContent = '⚠️ Vui lòng nhập đầy đủ thông tin..'; alertEl..classList..remove('d-none'); return; }
-            const res = Auth..login(email, pass);
-            if (!res..ok) { alertEl..textContent = '❌ ' + res..msg; alertEl..classList..remove('d-none'); }
-            else { successEl..textContent = `✅ Đăng nhập thành công! Chào ${res..user..name}`; successEl..classList..remove('d-none'); setTimeout(() => window..location..href = 'index..html', 1200); }
+            if (!email || !pass) { alertEl.textContent = '⚠️ Vui lòng nhập đầy đủ thông tin.'; alertEl.classList.remove('d-none'); return; }
+            const res = Auth.login(email, pass);
+            if (!res.ok) { alertEl.textContent = '❌ ' + res.msg; alertEl.classList.remove('d-none'); }
+            else { successEl.textContent = `✅ Đăng nhập thành công! Chào ${res.user.name}`; successEl.classList.remove('d-none'); setTimeout(() => window.location.href = 'index.html', 1200); }
         }
 
         function doRegister() {
-            const name = document..getElementById('reg-name')..value..trim();
-            const email = document..getElementById('reg-email')..value..trim();
-            const pass = document..getElementById('reg-password')..value;
-            const pass2 = document..getElementById('reg-password2')..value;
-            const alertEl = document..getElementById('register-alert');
-            const successEl = document..getElementById('register-success');
-            alertEl..classList..add('d-none');
-            successEl..classList..add('d-none');
+            const name = document.getElementById('reg-name').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const pass = document.getElementById('reg-password').value;
+            const pass2 = document.getElementById('reg-password2').value;
+            const alertEl = document.getElementById('register-alert');
+            const successEl = document.getElementById('register-success');
+            alertEl.classList.add('d-none');
+            successEl.classList.add('d-none');
 
-            if (!name || !email || !pass) { alertEl..textContent = '⚠️ Vui lòng điền đầy đủ thông tin..'; alertEl..classList..remove('d-none'); return; }
-            if (pass..length < 6) { alertEl..textContent = '⚠️ Mật khẩu phải có ít nhất 6 ký tự..'; alertEl..classList..remove('d-none'); return; }
-            if (pass !== pass2) { alertEl..textContent = '⚠️ Mật khẩu xác nhận không khớp..'; alertEl..classList..remove('d-none'); return; }
+            if (!name || !email || !pass) { alertEl.textContent = '⚠️ Vui lòng điền đầy đủ thông tin.'; alertEl.classList.remove('d-none'); return; }
+            if (pass.length < 6) { alertEl.textContent = '⚠️ Mật khẩu phải có ít nhất 6 ký tự.'; alertEl.classList.remove('d-none'); return; }
+            if (pass !== pass2) { alertEl.textContent = '⚠️ Mật khẩu xác nhận không khớp.'; alertEl.classList.remove('d-none'); return; }
 
-            const res = Auth..register(name, email, pass);
-            if (!res..ok) { alertEl..textContent = '❌ ' + res..msg; alertEl..classList..remove('d-none'); }
+            const res = Auth.register(name, email, pass);
+            if (!res.ok) { alertEl.textContent = '❌ ' + res.msg; alertEl.classList.remove('d-none'); }
             else {
-                successEl..textContent = '✅ Đăng ký thành công! Chuyển sang đăng nhập....';
-                successEl..classList..remove('d-none');
-                setTimeout(() => { document..getElementById('login-email')..value = email; document..getElementById('login-tab')..click(); }, 1500);
+                successEl.textContent = '✅ Đăng ký thành công! Chuyển sang đăng nhập..';
+                successEl.classList.remove('d-none');
+                setTimeout(() => { document.getElementById('login-email').value = email; document.getElementById('login-tab').click(); }, 1500);
             }
         }
 
-        document..addEventListener('keydown', e => {
-            if (e..key !== 'Enter') return;
-            if (document..getElementById('loginPane')..classList..contains('show')) doLogin();
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Enter') return;
+            if (document.getElementById('loginPane').classList.contains('show')) doLogin();
             else doRegister();
         });
     </script>

@@ -2,9 +2,9 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1..0">
-    <link rel="stylesheet" href="css/bootstrap..min..css">
-    <link rel="stylesheet" href="https://cdnjs..cloudflare..com/ajax/libs/font-awesome/6..0..0/css/all..min..css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Cửa Hàng Phong Thủy</title>
     <style>
         :root {
@@ -13,67 +13,67 @@
         }
         body { font-family: Arial, sans-serif; }
         
-        ..topbar { background-color: var(--primary-color); color: white; font-size: 0..85rem; }
-        ..navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1..5rem; }
-        ..nav-link { font-weight: 500; text-transform: uppercase; }
-        ..nav-link:hover { color: var(--primary-color) !important; }
+        .topbar { background-color: var(--primary-color); color: white; font-size: 0.85rem; }
+        .navbar-brand { color: var(--primary-color) !important; font-weight: 800; font-size: 1.5rem; }
+        .nav-link { font-weight: 500; text-transform: uppercase; }
+        .nav-link:hover { color: var(--primary-color) !important; }
         
         @media (max-width: 991px) {
-            ..search-cart-mobile { margin-top: 15px; }
+            .search-cart-mobile { margin-top: 15px; }
         }
 
-        ..product-card {
+        .product-card {
             border: 1px solid #eee;
-            transition: all 0..3s ease;
+            transition: all 0.3s ease;
             height: 100%;
         }
-        ..product-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0..1);
+        .product-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transform: translateY(-5px);
             border-color: var(--accent-color);
         }
         
-        ..product-img {
+        .product-img {
             width: 100%;
             aspect-ratio: 1 / 1; 
             object-fit: cover;   
         }
 
-        ..product-price {
+        .product-price {
             color: var(--primary-color);
             font-weight: bold;
-            font-size: 1..1rem;
+            font-size: 1.1rem;
         }
-        ..btn-add-cart {
+        .btn-add-cart {
             background-color: transparent;
             color: var(--primary-color);
             border: 1px solid var(--primary-color);
-            transition: 0..3s;
+            transition: 0.3s;
             display: block; 
             text-decoration: none; 
         }
-        ..btn-add-cart:hover {
+        .btn-add-cart:hover {
             background-color: var(--primary-color);
             color: white;
         }
 
         /* Nút Xem thêm */
-        ..btn-load-more {
+        .btn-load-more {
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
             font-weight: bold;
-            transition: 0..3s;
+            transition: 0.3s;
         }
-        ..btn-load-more:hover {
+        .btn-load-more:hover {
             background-color: var(--primary-color);
             color: white;
         }
 
         footer { background-color: #222; color: #ccc; }
         footer h5 { color: var(--accent-color); font-weight: bold; }
-        footer a { color: #ccc; text-decoration: none; transition: 0..3s; }
+        footer a { color: #ccc; text-decoration: none; transition: 0.3s; }
         footer a:hover { color: var(--accent-color); }
-        ..footer-bottom { background-color: #111; padding: 15px 0; }
+        .footer-bottom { background-color: #111; padding: 15px 0; }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -82,13 +82,13 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div><i class="fas fa-phone-alt"></i> Hotline: 0123 456 789</div>
             <div>
-                <a href="dangnhap..html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
-                <a href="dangnhap..html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
+                <a href="dangnhap.html" class="text-white text-decoration-none me-3 auth-login-link">Đăng nhập</a>
+                <a href="dangnhap.html?tab=register" class="text-white text-decoration-none auth-register-link">Đăng ký</a>
                 <span class="auth-user-menu" style="display:none;">
                     <i class="fas fa-user me-1"></i>
                     <span class="auth-user-name text-white fw-bold"></span>
-                    <a href="donhang..html" class="text-white text-decoration-none ms-3">Đơn hàng</a>
-                    <a href="#" onclick="Auth..logout()" class="text-white text-decoration-none ms-3">Đăng xuất</a>
+                    <a href="donhang.html" class="text-white text-decoration-none ms-3">Đơn hàng</a>
+                    <a href="#" onclick="Auth.logout()" class="text-white text-decoration-none ms-3">Đăng xuất</a>
                 </span>
             </div>
         </div>
@@ -96,7 +96,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index..html">PHONG THỦY</a>
+            <a class="navbar-brand" href="index.html">PHONG THỦY</a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
                 <span class="navbar-toggler-icon"></span>
@@ -104,7 +104,7 @@
 
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link" href="index..html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Sản phẩm</a>
                         <ul class="dropdown-menu border-0 shadow-sm">
@@ -115,17 +115,17 @@
                             <li><a class="dropdown-item" href="javascript:void(0)" onclick="filterProducts('vat-pham')">Vật Phẩm Bày Trí</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="kienthuc..html">Kiến Thức</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kienthuc.html">Kiến Thức</a></li>
                 </ul>
 
                 <div class="d-flex search-cart-mobile align-items-center">
                     <div class="input-group me-3" style="position:relative;">
-                        <input type="text" id="pt-search-input" class="form-control" placeholder="Tìm kiếm sản phẩm....">
+                        <input type="text" id="pt-search-input" class="form-control" placeholder="Tìm kiếm sản phẩm..">
                         <button class="btn btn-outline-secondary" type="button">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                    <a href="giohang..html" class="btn btn-outline-dark position-relative text-nowrap">
+                    <a href="giohang.html" class="btn btn-outline-dark position-relative text-nowrap">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="d-none d-lg-inline">Giỏ hàng</span>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">0</span>
@@ -143,11 +143,11 @@
                 
                 <div class="col product-item" data-category="trang-suc">
                     <div class="card product-card text-center p-2">
-                        <img src="img/vongtaydamatho..jpg" class="card-img-top rounded product-img" alt="Vòng tay mắt hổ">
+                        <img src="img/vongtaydamatho.jpg" class="card-img-top rounded product-img" alt="Vòng tay mắt hổ">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Vòng Tay Mắt Hổ</h6>
-                            <p class="product-price mb-2">850..000 đ</p>
-                            <a href="CTSP-vongtay..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">850.000 đ</p>
+                            <a href="CTSP-vongtay.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -156,11 +156,11 @@
 
                 <div class="col product-item" data-category="tuong">
                     <div class="card product-card text-center p-2">
-                        <img src="img/tuongtyhuudaxanh..jpg" class="card-img-top rounded product-img" alt="Tượng Tỳ Hưu">
+                        <img src="img/tuongtyhuudaxanh.jpg" class="card-img-top rounded product-img" alt="Tượng Tỳ Hưu">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Tượng Tỳ Hưu Đá Xanh</h6>
-                            <p class="product-price mb-2">2..500..000 đ</p>
-                            <a href="CTSP-tuongtyhuu..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">2.500.000 đ</p>
+                            <a href="CTSP-tuongtyhuu.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -169,11 +169,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/quacauthachanhhong..jpg" class="card-img-top rounded product-img" alt="Quả Cầu Thạch Anh">
+                        <img src="img/quacauthachanhhong.jpg" class="card-img-top rounded product-img" alt="Quả Cầu Thạch Anh">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Quả Cầu Thạch Anh Hồng</h6>
-                            <p class="product-price mb-2">1..200..000 đ</p>
-                            <a href="CTSP-quacauthachanh..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">1.200.000 đ</p>
+                            <a href="CTSP-quacauthachanh.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -182,11 +182,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/thacnuocphongthuy..jpg" class="card-img-top rounded product-img" alt="Thác Nước Phong Thủy">
+                        <img src="img/thacnuocphongthuy.jpg" class="card-img-top rounded product-img" alt="Thác Nước Phong Thủy">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Thác Nước Phong Thủy</h6>
-                            <p class="product-price mb-2">3..100..000 đ</p>
-                            <a href="CTSP-thacnuoc..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">3.100.000 đ</p>
+                            <a href="CTSP-thacnuoc.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -195,11 +195,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/caytailocthachanh..jpg" class="card-img-top rounded product-img" alt="Cây Tài Lộc">
+                        <img src="img/caytailocthachanh.jpg" class="card-img-top rounded product-img" alt="Cây Tài Lộc">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Cây Tài Lộc Thạch Anh</h6>
-                            <p class="product-price mb-2">1..500..000 đ</p>
-                            <a href="CTSP-caytailoc..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">1.500.000 đ</p>
+                            <a href="CTSP-caytailoc.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -208,11 +208,11 @@
 
                 <div class="col product-item" data-category="tuong">
                     <div class="card product-card text-center p-2">
-                        <img src="img/thiemthu..jpg" class="card-img-top rounded product-img" alt="Thiềm Thừ">
+                        <img src="img/thiemthu.jpg" class="card-img-top rounded product-img" alt="Thiềm Thừ">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Thiềm Thừ (Cóc Ngậm Tiền)</h6>
-                            <p class="product-price mb-2">1..800..000 đ</p>
-                            <a href="CTSP-thiemthu..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">1.800.000 đ</p>
+                            <a href="CTSP-thiemthu.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -221,11 +221,11 @@
 
                 <div class="col product-item" data-category="trang-suc">
                     <div class="card product-card text-center p-2">
-                        <img src="img/vongtaytramhuong..jpg" class="card-img-top rounded product-img" alt="Vòng Trầm Hương">
+                        <img src="img/vongtaytramhuong.jpg" class="card-img-top rounded product-img" alt="Vòng Trầm Hương">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Vòng Tay Trầm Hương</h6>
-                            <p class="product-price mb-2">2..200..000 đ</p>
-                            <a href="CTSP-vongtram..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">2.200.000 đ</p>
+                            <a href="CTSP-vongtram.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -234,11 +234,11 @@
 
                 <div class="col product-item" data-category="trang-suc">
                     <div class="card product-card text-center p-2">
-                        <img src="img/matdaychuyenholy..jpg" class="card-img-top rounded product-img" alt="Mặt Dây Chuyền Hồ Ly">
+                        <img src="img/matdaychuyenholy.jpg" class="card-img-top rounded product-img" alt="Mặt Dây Chuyền Hồ Ly">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Mặt Hồ Ly Đá Tự Nhiên</h6>
-                            <p class="product-price mb-2">950..000 đ</p>
-                            <a href="CTSP-matholy..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">950.000 đ</p>
+                            <a href="CTSP-matholy.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -247,11 +247,11 @@
 
                 <div class="col product-item" data-category="tuong">
                     <div class="card product-card text-center p-2">
-                        <img src="img/tuongphatdilac..jpg" class="card-img-top rounded product-img" alt="Tượng Phật Di Lặc">
+                        <img src="img/tuongphatdilac.jpg" class="card-img-top rounded product-img" alt="Tượng Phật Di Lặc">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Tượng Phật Di Lặc Bằng Gỗ</h6>
-                            <p class="product-price mb-2">3..500..000 đ</p>
-                            <a href="CTSP-tuongphat..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">3.500.000 đ</p>
+                            <a href="CTSP-tuongphat.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -260,11 +260,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/thapvanxuong..jpg" class="card-img-top rounded product-img" alt="Tháp Văn Xương">
+                        <img src="img/thapvanxuong.jpg" class="card-img-top rounded product-img" alt="Tháp Văn Xương">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Tháp Văn Xương Bằng Đồng</h6>
-                            <p class="product-price mb-2">1..100..000 đ</p>
-                            <a href="CTSP-thapvanxuong..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">1.100.000 đ</p>
+                            <a href="CTSP-thapvanxuong.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -273,11 +273,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/battubao..jpg" class="card-img-top rounded product-img" alt="Bát Tụ Bảo">
+                        <img src="img/battubao.jpg" class="card-img-top rounded product-img" alt="Bát Tụ Bảo">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Bát Tụ Bảo Chiêu Tài</h6>
-                            <p class="product-price mb-2">2..800..000 đ</p>
-                            <a href="CTSP-battubao..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">2.800.000 đ</p>
+                            <a href="CTSP-battubao.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -286,11 +286,11 @@
 
                 <div class="col product-item" data-category="trang-suc">
                     <div class="card product-card text-center p-2">
-                        <img src="img/daphithuy..jpg" class="card-img-top rounded product-img" alt="Đá Phỉ Thúy">
+                        <img src="img/daphithuy.jpg" class="card-img-top rounded product-img" alt="Đá Phỉ Thúy">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Ngọc Bội Phỉ Thúy</h6>
-                            <p class="product-price mb-2">4..500..000 đ</p>
-                            <a href="CTSP-phithuy..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">4.500.000 đ</p>
+                            <a href="CTSP-phithuy.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -299,11 +299,11 @@
 
                 <div class="col product-item" data-category="tuong">
                     <div class="card product-card text-center p-2">
-                        <img src="img/tuongngua..jpg" class="card-img-top rounded product-img" alt="Tượng Ngựa">
+                        <img src="img/tuongngua.jpg" class="card-img-top rounded product-img" alt="Tượng Ngựa">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Tượng Mã Đáo Thành Công</h6>
-                            <p class="product-price mb-2">2..600..000 đ</p>
-                            <a href="CTSP-tuongngua..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">2.600.000 đ</p>
+                            <a href="CTSP-tuongngua.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -312,11 +312,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/hoamaichieutai..jpg" class="card-img-top rounded product-img" alt="Đồng Tiền Hoa Mai">
+                        <img src="img/hoamaichieutai.jpg" class="card-img-top rounded product-img" alt="Đồng Tiền Hoa Mai">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Đồng Tiền Hoa Mai 5 Cánh</h6>
-                            <p class="product-price mb-2">250..000 đ</p>
-                            <a href="CTSP-tienhoamai..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">250.000 đ</p>
+                            <a href="CTSP-tienhoamai.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -325,11 +325,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/gaynhuy..jpg" class="card-img-top rounded product-img" alt="Gậy Như Ý">
+                        <img src="img/gaynhuy.jpg" class="card-img-top rounded product-img" alt="Gậy Như Ý">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Gậy Như Ý Ngọc Onyx</h6>
-                            <p class="product-price mb-2">1..900..000 đ</p>
-                            <a href="CTSP-gaynhuy..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">1.900.000 đ</p>
+                            <a href="CTSP-gaynhuy.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -338,11 +338,11 @@
 
                 <div class="col product-item" data-category="vat-pham">
                     <div class="card product-card text-center p-2">
-                        <img src="img/holo..jpg" class="card-img-top rounded product-img" alt="Hồ Lô Phong Thủy">
+                        <img src="img/holo.jpg" class="card-img-top rounded product-img" alt="Hồ Lô Phong Thủy">
                         <div class="card-body p-2">
                             <h6 class="card-title text-truncate">Hồ Lô Đồng Cầu Bình An</h6>
-                            <p class="product-price mb-2">800..000 đ</p>
-                            <a href="CTSP-holo..html" class="btn btn-sm btn-add-cart w-100">
+                            <p class="product-price mb-2">800.000 đ</p>
+                            <a href="CTSP-holo.html" class="btn btn-sm btn-add-cart w-100">
                                 <i class="fas fa-eye"></i> Xem ngay
                             </a>
                         </div>
@@ -364,7 +364,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5>Về Chúng Tôi</h5>
-                    <p>Chuyên cung cấp vật phẩm phong thủy tự nhiên, mang lại tài lộc và bình an..</p>
+                    <p>Chuyên cung cấp vật phẩm phong thủy tự nhiên, mang lại tài lộc và bình an.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5>Hỗ Trợ</h5>
@@ -377,128 +377,128 @@
                     <h5>Liên Hệ</h5>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-phone-alt me-2"></i> 0123 456 789</li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i> TP.. Hồ Chí Minh</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> TP. Hồ Chí Minh</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy..</p>
+            <p class="mb-0">&copy; 2026 Cửa Hàng Phong Thủy.</p>
         </div>
     </footer>
 
-    <script src="https://cdn..jsdelivr..net/npm/bootstrap@5..3..0/dist/js/bootstrap..bundle..min..js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
         // ===== AUTH SYSTEM =====
         const Auth = {
             getCurrentUser() { 
-                return jsON..parse(localStorage..getItem('pt_current_user') || 'null'); 
+                return jsON.parse(localStorage.getItem('pt_current_user') || 'null'); 
             },
             logout() {
-                localStorage..removeItem('pt_current_user');
-                Auth..updateNavUI();
-                window..location..href = 'index..html';
+                localStorage.removeItem('pt_current_user');
+                Auth.updateNavUI();
+                window.location.href = 'index.html';
             },
             updateNavUI() {
-                const user = Auth..getCurrentUser();
-                document..querySelectorAll('..auth-login-link')..forEach(el => {
-                    el..style..display = user ? 'none' : 'inline-block';
+                const user = Auth.getCurrentUser();
+                document.querySelectorAll('.auth-login-link').forEach(el => {
+                    el.style.display = user ? 'none' : 'inline-block';
                 });
-                document..querySelectorAll('..auth-register-link')..forEach(el => {
-                    el..style..display = user ? 'none' : 'inline-block';
+                document.querySelectorAll('.auth-register-link').forEach(el => {
+                    el.style.display = user ? 'none' : 'inline-block';
                 });
-                document..querySelectorAll('..auth-user-menu')..forEach(el => {
-                    el..style..display = user ? 'inline-block' : 'none';
+                document.querySelectorAll('.auth-user-menu').forEach(el => {
+                    el.style.display = user ? 'inline-block' : 'none';
                 });
-                document..querySelectorAll('..auth-user-name')..forEach(el => {
-                    if (user) el..textContent = user..name || user..email..split('@')[0];
+                document.querySelectorAll('.auth-user-name').forEach(el => {
+                    if (user) el.textContent = user.name || user.email.split('@')[0];
                 });
             }
         };
 
         // Hàm hiển thị thông báo không còn sản phẩm
         function showNoProductMessage() {
-            document..getElementById('noProductMsg')..style..display = 'block';
-            document..getElementById('btnLoadMore')..style..display = 'none';
+            document.getElementById('noProductMsg').style.display = 'block';
+            document.getElementById('btnLoadMore').style.display = 'none';
         }
 
         // Hàm lọc sản phẩm dựa trên danh mục
         function filterProducts(category) {
-            const products = document..querySelectorAll('..product-item');
-            const title = document..getElementById('product-title');
+            const products = document.querySelectorAll('.product-item');
+            const title = document.getElementById('product-title');
 
             if (category === 'trang-suc') {
-                title..innerText = 'TRANG SỨC PHONG THỦY';
+                title.innerText = 'TRANG SỨC PHONG THỦY';
             } else if (category === 'tuong') {
-                title..innerText = 'TƯỢNG PHONG THỦY';
+                title.innerText = 'TƯỢNG PHONG THỦY';
             } else if (category === 'vat-pham') {
-                title..innerText = 'VẬT PHẨM BÀY TRÍ';
+                title.innerText = 'VẬT PHẨM BÀY TRÍ';
             } else {
-                title..innerText = 'TẤT CẢ SẢN PHẨM';
+                title.innerText = 'TẤT CẢ SẢN PHẨM';
             }
 
-            products..forEach(product => {
-                if (category === 'tat-ca' || product..getAttribute('data-category') === category) {
-                    product..style..display = 'block'; 
+            products.forEach(product => {
+                if (category === 'tat-ca' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'block'; 
                 } else {
-                    product..style..display = 'none'; 
+                    product.style.display = 'none'; 
                 }
             });
 
-            document..getElementById('noProductMsg')..style..display = 'none';
-            document..getElementById('btnLoadMore')..style..display = 'inline-block';
+            document.getElementById('noProductMsg').style.display = 'none';
+            document.getElementById('btnLoadMore').style.display = 'inline-block';
         }
 
         // Chức năng tìm kiếm sản phẩm
-        const searchInput = document..getElementById('pt-search-input');
+        const searchInput = document.getElementById('pt-search-input');
 
-        searchInput..addEventListener('input', function() {
-            const query = this..value..toLowerCase()..trim();
-            const products = document..querySelectorAll('..product-item');
-            const title = document..getElementById('product-title');
-            const noProductMsg = document..getElementById('noProductMsg');
-            const btnLoadMore = document..getElementById('btnLoadMore');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            const products = document.querySelectorAll('.product-item');
+            const title = document.getElementById('product-title');
+            const noProductMsg = document.getElementById('noProductMsg');
+            const btnLoadMore = document.getElementById('btnLoadMore');
             
             let hasResult = false;
 
             if (query === '') {
-                title..innerText = 'TẤT CẢ SẢN PHẨM';
+                title.innerText = 'TẤT CẢ SẢN PHẨM';
             } else {
-                title..innerText = 'KẾT QUẢ TÌM KIẾM CHO: "' + query..toUpperCase() + '"';
+                title.innerText = 'KẾT QUẢ TÌM KIẾM CHO: "' + query.toUpperCase() + '"';
             }
 
-            products..forEach(product => {
-                const productName = product..querySelector('..card-title')..innerText..toLowerCase();
+            products.forEach(product => {
+                const productName = product.querySelector('.card-title').innerText.toLowerCase();
                 
-                if (productName..includes(query)) {
-                    product..style..display = 'block';
+                if (productName.includes(query)) {
+                    product.style.display = 'block';
                     hasResult = true;
                 } else {
-                    product..style..display = 'none';
+                    product.style.display = 'none';
                 }
             });
 
             if (!hasResult && query !== '') {
-                noProductMsg..innerText = 'Không tìm thấy sản phẩm nào phù hợp với "' + query + '"';
-                noProductMsg..style..display = 'block';
-                btnLoadMore..style..display = 'none';
+                noProductMsg.innerText = 'Không tìm thấy sản phẩm nào phù hợp với "' + query + '"';
+                noProductMsg.style.display = 'block';
+                btnLoadMore.style.display = 'none';
             } else {
-                noProductMsg..style..display = 'none';
-                btnLoadMore..style..display = query === '' ? 'inline-block' : 'none';
+                noProductMsg.style.display = 'none';
+                btnLoadMore.style.display = query === '' ? 'inline-block' : 'none';
             }
         });
 
         // Update cart badge
         function updateCartBadge() {
-            let cart = jsON..parse(localStorage..getItem('cart_items') || '[]');
-            let total = cart..reduce((s, i) => s + i..qty, 0);
-            document..querySelector('..cart-badge')..innerText = total;
+            let cart = jsON.parse(localStorage.getItem('cart_items') || '[]');
+            let total = cart.reduce((s, i) => s + i.qty, 0);
+            document.querySelector('.cart-badge').innerText = total;
         }
 
         // Init khi trang load
-        window..addEventListener('DOMContentLoaded', () => {
-            Auth..updateNavUI();
+        window.addEventListener('DOMContentLoaded', () => {
+            Auth.updateNavUI();
             updateCartBadge();
         });
     </script>
